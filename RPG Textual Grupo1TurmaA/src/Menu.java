@@ -7,32 +7,32 @@ public class Menu {
         System.out.println("\nNOME DO JOGO");
         do
         {
-            System.out.println("\n1- InstruÃ§Ãµes\n2- Jogar\n3- CrÃ©ditos\n4- Sair");
-            System.out.print("\nDigite sua opÃ§Ã£o: ");
+            System.out.println("\n1- Instruções\n2- Jogar\n3- Créditos\n4- Sair");
+            System.out.print("\nDigite sua opção: ");
             escolha_do_menu = scanner.nextInt();
             switch (escolha_do_menu)
             {
                 case 1:
-                    System.out.println("VocÃª escolheu: InstruÃ§Ãµes");
+                    System.out.println("Você escolheu: Instruções");
                     Instrucoes.main(args);
                     ft_enter();
                     break;
                 case 2:
-                    System.out.println("VocÃª escolheu: Jogar");
+                    System.out.println("Você escolheu: Jogar");
                     //ft_jogo();
                     break;
                 case 3:
-                    System.out.println("VocÃª escolheu: CrÃ©ditos");
+                    System.out.println("Você escolheu: Créditos");
                     Creditos.main(args);
                     ft_enter();
-                    //ft_crÃ©ditos();
+                    //ft_créditos();
                     break;
                 case 4:
-                    System.out.println("VocÃª escolheu: Sair");
+                    System.out.println("Você escolheu: Sair");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("\nOpÃ§Ã£o invÃ¡lida ou inexistente");
+                    System.out.println("\nOpção inválida ou inexistente");
                     ft_enter();
             }
         }while(escolha_do_menu != 4);
