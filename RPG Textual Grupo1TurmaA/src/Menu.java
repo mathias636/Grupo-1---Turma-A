@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Menu {
+    public static Scanner scanner = new  Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scanner = new  Scanner(System.in);
         int escolha_do_menu;
         System.out.println("\nNOME DO JOGO");
         do
@@ -14,7 +14,8 @@ public class Menu {
             {
                 case 1:
                     System.out.println("Você escolheu: Instruções");
-                    // ft_instrucoes();
+                    Instrucoes.main(args);
+                    ft_enter();
                     break;
                 case 2:
                     System.out.println("Você escolheu: Jogar");
@@ -22,6 +23,8 @@ public class Menu {
                     break;
                 case 3:
                     System.out.println("Você escolheu: Créditos");
+                    Creditos.main(args);
+                    ft_enter();
                     //ft_créditos();
                     break;
                 case 4:
@@ -30,10 +33,14 @@ public class Menu {
                     break;
                 default:
                     System.out.println("\nOpção inválida ou inexistente");
-                    System.out.print("pressione \"Enter\" para mostrar novamente");
-                    scanner.nextLine(); scanner.nextLine();
+                    ft_enter();
             }
-        }while(escolha_do_menu != 1 && escolha_do_menu != 2 && escolha_do_menu != 3 && escolha_do_menu != 4);
+        }while(escolha_do_menu != 4);
         scanner.close();
+    }
+
+    private static void ft_enter() {
+        System.out.print("\n\nPressione \"Enter\" para mostrar o menu novamente");
+        scanner.nextLine(); scanner.nextLine();
     }
 }
