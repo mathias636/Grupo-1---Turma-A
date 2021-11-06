@@ -4,9 +4,11 @@ public class Menu {
     public static Scanner scanner = new  Scanner(System.in);
     public static void main(String[] args) {
         int escolha_do_menu;
-        System.out.println("\nNOME DO JOGO");
         do
         {
+            System.out.print("\n");
+            System.out.println("-- DEVON --");
+            System.out.print("\n");
             System.out.println("\n1- Instruções\n2- Jogar\n3- Créditos\n4- Sair");
             System.out.print("\nDigite sua opção: ");
             escolha_do_menu = scanner.nextInt();
@@ -25,7 +27,6 @@ public class Menu {
                     System.out.println("Você escolheu: Créditos");
                     Creditos.main(args);
                     ft_enter();
-                    //ft_créditos();
                     break;
                 case 4:
                     System.out.println("Você escolheu: Sair");
