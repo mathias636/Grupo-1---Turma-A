@@ -6,8 +6,8 @@ public class Menu {
         int escolha_do_menu;
         do
         {
-            System.out.print("\n-- DEVON --\n");
-            System.out.println("\n1- Instruções\n2- Jogar\n3- Créditos\n4- Sair\n");
+            System.out.println("\n-- DEVON --\n");
+            System.out.println("1- Instruções\n2- Jogar\n3- Créditos\n4- Sair\n");
             System.out.print("Digite sua opção: ");
             escolha_do_menu = scanner.nextInt();
             switch (escolha_do_menu)
