@@ -14,8 +14,9 @@ public class AllInOne {
         {
             acertos = ft_jogo(acertos);
         }
-        scanner.close();
+        // scanner.close();
     }
+
     private static boolean Menu(boolean menu_stop) {
         int escolha_do_menu = 0;
         System.out.print("\n-- DEVON --\n");
@@ -71,6 +72,6 @@ public class AllInOne {
     }
     private static void ft_enter() {
         System.out.print("\n>> Pressione \"Enter\" para mostrar o menu novamente");
-        Menu.scanner.nextLine();
+        Main.scanner.nextLine();
     }
 }
