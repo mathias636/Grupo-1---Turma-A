@@ -12,7 +12,7 @@ public class SegundoEnredo {
         +"\nDEUS HASAD:  \nQUEM VOCÊ PENSA QUE É PARA ESTAR FALANDO COMIGO ASSIM?"+
         "\nEU SOU O GRANDE HASAD, DEUS METAMORFO." +
         "\nSAIA DAQUI ANTES QUE VEJA MINHA FÚRIA." +        
-        "DEVON: \nVeremos essa fúria então, Hasad."+
+        "\nDEVON: \nVeremos essa fúria então, Hasad."+
         "\nDEUS HASAD:"+
        " \nVOCÊ FOI AVISADO, SEU TOLO.");
 
