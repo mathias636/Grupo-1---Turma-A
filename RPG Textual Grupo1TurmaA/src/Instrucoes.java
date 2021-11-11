@@ -1,7 +1,6 @@
 ﻿public class Instrucoes {
 
     public static void main(String[] args) {
-        System.out.println("Você escolheu: Instruções\n");
         System.out.println("\n =======================================================================================================");
         System.out.println("\n Devon é um jogo de perguntas e respostas, onde o jogador enfrenta desafios para progredir na historia.");
         System.out.println("\n Os desafios são compostos por 5 questões (A,B,C,D,E), onde serão testados seus conhecimentos referente a matéria de matematica.");
