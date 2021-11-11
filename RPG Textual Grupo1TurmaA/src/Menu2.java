@@ -46,7 +46,7 @@ public class Menu2 {
                     System.exit(0);
                     break;
                     default:
-                    System.out.println("\nOpção inválida ou inexistente");
+                    System.out.println("\nOpção inválida ou inexistente teste");
                     ft_enter();
                 }
                 
