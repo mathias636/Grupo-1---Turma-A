@@ -1,7 +1,4 @@
-﻿
-
-public class SegundoEnredo {
-
+﻿public class SegundoEnredo {
     public static void main(String []args ) {
         System.out.println("Alguns dias depois..." + 
         "\n "+
