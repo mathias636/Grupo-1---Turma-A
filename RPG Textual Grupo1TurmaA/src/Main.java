@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
     private static Object args;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         boolean menu_stop = false;
         boolean acertos = false;
         do
@@ -17,9 +17,7 @@ public class Main {
         }
     }
 
-    private static boolean ft_jogo(boolean acertos) {
-        System.out.println("\nVocê escolheu: Jogar\n");
-        System.out.println("O LOOP É ESPERADO");
+    private static boolean ft_jogo(boolean acertos) throws Exception {
         //primeiro Enredo não precisa de condicional
         PrimeiroEnredo.main(args);
         acertos = Desafio1.main(args, acertos);
