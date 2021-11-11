@@ -8,8 +8,5 @@ public class Creditos {
 
         System.out.println("\n Obrigado a todos");
         
-        
-        
-        System.out.println("teste");
     }
 }
