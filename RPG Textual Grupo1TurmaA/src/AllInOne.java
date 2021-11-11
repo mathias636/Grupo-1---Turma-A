@@ -50,22 +50,26 @@ public class AllInOne {
         return(tentativa);
     }
     private static void Instrucoes() {
-        System.out.println("\nVocê escolheu: Instruções");
-        System.out.println("\n =======================================================================================================");
-        System.out.println("\n Devon é um jogo de perguntas e respostas, onde o jogador enfrenta desafios para progredir na história.");
-        System.out.println("\n Os desafios são compostos por 5 questões (A,B,C,D,E), onde serão testados seus conhecimentos referente a matéria de matematica.");
-        System.out.println("\n Para selecionar as respostas, você deve digitar a letra correspodente a alternativa que considera correta.");
-        System.out.println("\n Não há chances para erro. Caso erre qualquer questão, o jogo será reiniciado.");
+        System.out.println(" ============================================================================================================================================");
+        System.out.println(" =  Devon é um jogo de perguntas e respostas, aonde o jogados enfrenta desafios para progredir na historia.                                 =");
+        System.out.println(" == Os desafios são compostos por 5 questões (A,B,C,D,E), onde seram testados seus conhecimentos referente a materia de matematica .       ==");
+        System.out.println(" =  Para selecionar as respostas voce deve digitar o a letra correspodente a alternativa correta.                                           =");
+        System.out.println(" == Caso venha a errar alguma das questões, independete da etapa que esta no jogo, é game over, e o jogo recomeça.                         ==");
+        System.out.println(" ============================================================================================================================================");
        
         ft_enter();
     }
     private static void Creditos() {
-        System.out.println("\nVocê escolheu: Créditos");
-        System.out.println("\n========================================================================");
-        System.out.println("\n 'Devon' Foi desenvolvido como parte do projeto integrador do curso de Analise e Desenvolvimento de Sitemas do Senac");
-        System.out.println("\n O grupo de desenvolvimento é composto por:"+"\n Elton Freitas"+"\n Keity Pires " + "\n Matheus Galvão" + "\n Milena Kamimura"+ "\n Vinicius Gomes");
-        System.out.println("\n Obrigado a todos");
-        
+        System.out.println("\n******************************************************************************************************************************");
+        System.out.println("** 'Devon' Foi desenvolvido como parte do projeto integrador do curso de Analise e desenvolvimento de Sitemas no Senac      **");
+        System.out.println("** O grupo de desenvolvimento é composto por:                                                                               **"+
+        "\n** • Elton Freitas                                                                                                          **"+
+        "\n** • Keity Pires                                                                                                            ** " + 
+        "\n** • Matheus Galvão                                                                                                         **" + 
+        "\n** • Milena Kamimura                                                                                                        **"+ 
+        "\n** • Vinicius Gomes                                                                                                         **" );
+        System.out.println("** Obrigado a todos                                                                                                         **");
+        System.out.println("******************************************************************************************************************************");
         ft_enter();
     }
     private static void ft_enter() {
