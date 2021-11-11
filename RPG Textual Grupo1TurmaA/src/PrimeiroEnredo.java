@@ -6,7 +6,7 @@ public class PrimeiroEnredo {
                                                                            // mensagens, pode mudar o valor destas 3
                                                                            // variáveis para 0;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(Object args) throws Exception {
         Digita("\nMEFISTO: Seja Bem Vindo, meu caro jogador. Sou Mefisto, e você, como se chamas?"
                 + "\nDEVON: \nMe chamo Devon "
                 + "\nMEFISTO: \nDEVON? DEVON, O MÍSTICO? NÃO É POSSÍVEL!! É VOCÊ? O ESCOLHIDO??"

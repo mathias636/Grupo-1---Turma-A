@@ -9,7 +9,7 @@ public class Desafio2 {
     }
     
     
-    
+
    public static void D2() {
     	
 	   Scanner scanner = new Scanner(System.in);
@@ -41,5 +41,11 @@ public class Desafio2 {
     	}
     	
     }
+
+
+
+public static boolean main(Object args, boolean acertos) {
+    return false;
+}
 
 }
