@@ -17,10 +17,14 @@ public class PrimeiroEnredo {
                 + "\nPara que TUDO funcione novamente. Fazer com que tudo seja eliminado."
                 + "\nNão será fácil, para termos essa conquista, pode até custar a sua vida."
                 + "\nDEVON: \nMas, Mefisto, não tenho poderes para tal conquista. Como vou fazer isso acontecer? Não tem como eu conseguir."
-                + "\nMEFISTO:"
-                + "\nHA-HA-HA-HA VOCÊ PRECISARÁ DOS PODERES DOS 6 DEUSES MAIS PODEROSOS DO MUNDO PARA CONSEGUIR. PARA DERROTÁ-LOS VOU LHE DAR UM BELO DE UM UPGRADE."
+                + "\nMEFISTO: \nHA-HA-HA-HA VOCÊ PRECISARÁ DOS PODERES DOS 6 DEUSES MAIS PODEROSOS DO MUNDO PARA CONSEGUIR. PARA DERROTÁ-LOS VOU LHE DAR UM BELO DE UM UPGRADE."
                 + "\nAQUI, RECEBA GLADIUS, SUA MAIS NOVA LEAL COMPANHEIRA. ELA IRÁ TE GUIAR E TE DAR FORÇAS PARA AS NOVAS BATALHAS."
-                + "\nE ASSIM, QUANDO CONSEGUIR OS 6 PODERES SUPREMOS, TUDO FICARÁ DO JEITO QUE DEVE SER.",
+                + "\nE ASSIM, QUANDO CONSEGUIR OS 6 PODERES SUPREMOS, TUDO FICARÁ DO JEITO QUE DEVE SER."
+                + "\nDEVON: \nE por onde eu devo começar?"
+                + "\nMEFISTO: \nA partir de agora é com você. Você já sabe o que fazer. \nBoa sorte, Devon, O Místico."
+                + "\n " + "\nNARRADOR: \nE começa a jornada de DEVON."
+                + "\nSeu primeiro Deus é Hasada, que mora em Terra de Ninguém."
+                + "\nMas para chegar lá, precisa escolhar o caminho correto" + "\nPara onde Devon deve ir?",
                 TimeUnit.MILLISECONDS, temp_dialog);
 
     }
