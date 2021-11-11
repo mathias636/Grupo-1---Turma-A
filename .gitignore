@@ -114,3 +114,6 @@ nbdist/
 # Ignore all local history of files
 .history
 .ionide
+
+### Others
+GBK2UTF8-result-90249.md
