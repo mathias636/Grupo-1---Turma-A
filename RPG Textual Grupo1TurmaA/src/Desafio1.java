@@ -29,7 +29,7 @@ public class Desafio1{
         
     }
     
-     public static void main(Object args, int es) {
+     public static boolean main(Object args, boolean acertos) {
         System.out.println("Desafio1");
         System.out.println("\nNARRADOR: ");
         System.out.println("\nE começa a luta entre Devon e Hasad, Deus Metamorfo.");
@@ -48,6 +48,7 @@ public class Desafio1{
         escolha = scanner.nextInt();
         
         Desafio1(escolha);
+        return acertos;
         
     }   
 

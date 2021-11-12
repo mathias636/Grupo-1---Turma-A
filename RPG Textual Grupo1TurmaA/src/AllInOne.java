@@ -14,7 +14,6 @@ public class AllInOne {
         {
             acertos = ft_jogo(acertos);
         }
-        // scanner.close();
     }
 
     private static boolean Menu(boolean menu_stop) {
@@ -27,6 +26,7 @@ public class AllInOne {
         {
             case 1:
                 Instrucoes();
+                ft_enter();
                 break;
             case 2:
                 menu_stop = true;
@@ -56,7 +56,6 @@ public class AllInOne {
         System.out.println(" =  Para selecionar as respostas voce deve digitar o a letra correspodente a alternativa correta.                                           =");
         System.out.println(" == Caso venha a errar alguma das questões, independete da etapa que esta no jogo, é game over, e o jogo recomeça.                         ==");
         System.out.println(" ============================================================================================================================================");
-       
         ft_enter();
     }
     private static void Creditos() {
@@ -72,12 +71,10 @@ public class AllInOne {
         System.out.println("******************************************************************************************************************************");
         ft_enter();
     }
+
     private static void ft_enter() {
         System.out.print("\n>> Pressione \"Enter\" para mostrar o menu novamente");
-        Main.scanner.nextLine();
-       
-  
+        AllInOne.scanner.nextLine();
     }
-    
-    
+
 }
