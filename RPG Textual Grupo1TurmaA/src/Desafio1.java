@@ -42,7 +42,7 @@ public class Desafio1{
         System.out.println("\n5. 1342");
         
         int escolha;
-        System.out.println("\nFaça sua escolha:");
+        System.out.print("\nFaça sua escolha:");
         
         Scanner scanner = new Scanner(System.in);
         escolha = scanner.nextInt();

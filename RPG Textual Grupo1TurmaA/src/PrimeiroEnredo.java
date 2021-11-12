@@ -30,16 +30,20 @@ public class PrimeiroEnredo {
                 + "\nSeu primeiro Deus é Hasada, que mora em Terra de Ninguém."
                 + "\nMas para chegar lá, precisa escolhar o caminho correto" + "\nPara onde Devon deve ir?",
                 TimeUnit.MILLISECONDS, temp_dialog);
-                Digita("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa \n", TimeUnit.MILLISECONDS, temp_dialog);
-                choice = scanner.nextInt();
-                if(choice == 1){
-                    Digita("Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.", TimeUnit.MILLISECONDS, temp_dialog);
-                }
-                if(choice == 2){
-                    Digita("Escolha 2: Você escolheu a Ponte Travessa, e Devon conseguiu achar um atalho para chegar na Terra de Ninguém ", TimeUnit.MILLISECONDS, temp_dialog);
-                }else{
-                    System.out.println("Opção Inválida ou Inexistente");
-                }
+                do 
+                {
+                    Digita("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção: ", TimeUnit.MILLISECONDS, temp_dialog);
+                    choice = scanner.nextInt();
+                    if(choice == 1){
+                        Digita("Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.", TimeUnit.MILLISECONDS, temp_dialog);
+                        break;
+                    }
+                    if(choice == 2){
+                        Digita("Escolha 2: Você escolheu a Ponte Travessa, e Devon conseguiu achar um atalho para chegar na Terra de Ninguém ", TimeUnit.MILLISECONDS, temp_dialog);
+                    }else{
+                        System.out.println("Opção Inválida ou Inexistente");
+                    }
+                }while (choice < 1 || choice > 2);
     }
 
     public static void Digita(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
