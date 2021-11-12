@@ -1,10 +1,14 @@
 ﻿import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 public class PrimeiroEnredo {
 
-    static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10; // Para rodar o jogo sem o delay nas
+    // static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10; // Para rodar o jogo sem o delay nas
+    static int temp_dialog = 1, temp_narrativa = 75, temp_transicao = 10; // Para rodar o jogo sem o delay nas
                                                                            // mensagens, pode mudar o valor destas 3
                                                                            // variáveis para 0;
+    static Scanner scanner = new Scanner(System.in);
+    static int choice = 0;
 
     public static void main(Object args) throws Exception {
         Digita("\nMEFISTO: Seja Bem Vindo, meu caro jogador. Sou Mefisto, e você, como se chamas?"
@@ -26,7 +30,16 @@ public class PrimeiroEnredo {
                 + "\nSeu primeiro Deus é Hasada, que mora em Terra de Ninguém."
                 + "\nMas para chegar lá, precisa escolhar o caminho correto" + "\nPara onde Devon deve ir?",
                 TimeUnit.MILLISECONDS, temp_dialog);
-
+                Digita("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa \n", TimeUnit.MILLISECONDS, temp_dialog);
+                choice = scanner.nextInt();
+                if(choice == 1){
+                    Digita("Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.", TimeUnit.MILLISECONDS, temp_dialog);
+                }
+                if(choice == 2){
+                    Digita("Escolha 2: Você escolheu a Ponte Travessa, e Devon conseguiu achar um atalho para chegar na Terra de Ninguém ", TimeUnit.MILLISECONDS, temp_dialog);
+                }else{
+                    System.out.println("Opção Inválida ou Inexistente");
+                }
     }
 
     public static void Digita(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {

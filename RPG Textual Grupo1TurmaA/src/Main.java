@@ -18,7 +18,7 @@ public class Main {
 
     private static boolean ft_jogo(boolean acertos) throws Exception {
         //primeiro Enredo não precisa de condicional
-        // PrimeiroEnredo.main(args);
+        PrimeiroEnredo.main(args);
         acertos = Desafio1.main(args, acertos);
         //Só passará para os próximos se e somente se acertar o desafio anterior
         if(acertos == true){
