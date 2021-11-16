@@ -13,14 +13,17 @@ public class QuartoEnredo {
 
     public static void main(Object args) throws Exception {
 
-        Digita("\nDEUSA EGOYIS: Olá, Devon." + "\nBem-vindo a minha humilde residência. Eu estava te aguardando."
-                + "\nDEVON: Como você sabia que eu estava vindo?" + "\nDEUSA EGOYIS: Está brincando?"
+        Digita("\nDEUSA EGOYIS: \nOlá, Devon." + "\nBem-vindo a minha humilde residência. Eu estava te aguardando."
+                + "\nDEVON: \nComo você sabia que eu estava vindo?" + "\nDEUSA EGOYIS: Está brincando?"
                 + "\nSou o Deus controlador de mentes, consigo saber de tudo o que está acontecendo." + "\nTUDO."
                 + "\nInclusive o que se passa na sua cabeça." + "\nMas para nossa batalha, não vou te controlar."
                 + "\nNão preciso disso para ganhar de você."
-                + "\nDEVON:Acho que você não sabe com quem está falando, Egoyis." + "\nMas vamos lá, Deus Controlador."
-                // DESAFIO 04
-                + "\nNARRADOR: E Devon, consegue vencer o Deusa Egoyis, e segue para o quarto Deus."
+                + "\nDEVON: \nAcho que você não sabe com quem está falando, Egoyis."
+                + "\nMas vamos lá, Deus Controlador."
+                + "\nNARRADOR: \nDevon subestimou Egoyis, e agora precisará resolver o desafio para conseguir derrotá-la."
+
+                // DESAFIO 03
+                + "\nNARRADOR: \nE Devon, consegue vencer o Deusa Egoyis, e segue para o quarto Deus."
                 + "\nAgora para seguir com seu destino, Devon irá tirar um descanso para sua próxima batalha.",
                 TimeUnit.MILLISECONDS, temp_dialog);
 
