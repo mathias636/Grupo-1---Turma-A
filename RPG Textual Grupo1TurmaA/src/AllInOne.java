@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class AllInOne {
     /*
     variavéis para a função "Digita";
     ORIGINAL:
