@@ -1,4 +1,4 @@
-import java.util.Scanner;
+﻿import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class AllInOne {
@@ -7,7 +7,7 @@ public class AllInOne {
     ORIGINAL:
     public static final int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
     */
-    public static int temp_dialog = 1, temp_narrativa = 75, temp_transicao = 10;
+    public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
     public static long tempo_mensagem = 0;
     /*
     abaixo, variáveis para condicionais do Jogo(), scanner,  e GameOver(); 
@@ -27,7 +27,7 @@ public class AllInOne {
         int escolha_do_menu = 0;
         do
         {
-            Digita("\n-- DEVON --\n"+"\n1- Instruções\n2- Jogar\n3- Créditos\n4- Sair\n"+"\nDigite sua opção: ",TimeUnit.MILLISECONDS, temp_dialog);
+            Digita("\n-- DEVON --\n"+"\n1- Instruções\n2- Jogar\n3- Créditos\n4- Sair\n"+"\nDigite sua opção: ",TimeUnit.MILLISECONDS, temp_transicao);
             escolha_do_menu = scanner.nextInt();
             switch (escolha_do_menu)
             {
@@ -36,7 +36,6 @@ public class AllInOne {
                     ft_enter();
                     break;
                 case 2:
-                    Digita("\n>>Aperte \"Enter\" para começar o jogo: ", TimeUnit.MILLISECONDS, temp_dialog);
                     ft_enter();
                     break;
                 case 3:
@@ -104,8 +103,8 @@ public class AllInOne {
     }
 
     private static void PrimeiroEnredo() throws Exception{
-        Digita("\nMEFISTO: Seja Bem Vindo, meu caro jogador. Sou Mefisto, e você, como se chamas?"
-            + "\nDEVON: \nMe chamo Devon "
+        Digita("\nMEFISTO: Seja Bem Vindo, meu caro jogador. Sou Mefisto, e você, como se chamas?",TimeUnit.MILLISECONDS, temp_dialog);
+            Digita("\nDEVON: \nMe chamo Devon "
             + "\nMEFISTO: \nDEVON? DEVON, O MÍSTICO? NÃO É POSSÍVEL!! É VOCÊ? O ESCOLHIDO??"
             + "\nDEVON: \nEU? ESCOLHIDO? "
             + "\nMEFISTO: \nSim, Devon. O ESCOLHIDO. Vivemos neste Mundo caótico, podre e sem vida. Um mundo onde a ignorância e a ganância são os líderes."
@@ -118,54 +117,59 @@ public class AllInOne {
             + "\nAQUI, RECEBA GLADIUS, SUA MAIS NOVA LEAL COMPANHEIRA. ELA IRÁ TE GUIAR E TE DAR FORÇAS PARA AS NOVAS BATALHAS."
             + "\nE ASSIM, QUANDO CONSEGUIR OS 6 PODERES SUPREMOS, TUDO FICARÁ DO JEITO QUE DEVE SER."
             + "\nDEVON: \nE por onde eu devo começar?"
-            + "\nMEFISTO: \nA partir de agora é com você. Você já sabe o que fazer. \nBoa sorte, Devon, O Místico."
-            + "\n " + "\nNARRADOR: \nE começa a jornada de DEVON."
+            + "\nMEFISTO: \nA partir de agora é com você. Você já sabe o que fazer. \nBoa sorte, Devon, O Místico.",TimeUnit.MILLISECONDS, temp_dialog);
+           System.out.println("\n");
+            enter();     
+            Digita("\n " + "\nNARRADOR: \nE começa a jornada de DEVON."
             + "\nSeu primeiro Deus é Hasada, que mora em Terra de Ninguém."
-            + "\nMas para chegar lá, precisa escolhar o caminho correto" + "\nPara onde Devon deve ir?",
-        TimeUnit.MILLISECONDS, temp_dialog);
+            + "\nMas para chegar lá, precisa escolhar o caminho correto" + "\nPara onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_narrativa);
         do {
-            Digita("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção: ", TimeUnit.MILLISECONDS,
-                    temp_dialog);
+            System.out.println("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção: ");
             choice = scanner.nextInt();
             if (choice == 1) {
-                Digita("Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.", TimeUnit.MILLISECONDS, temp_dialog);
+                Digita("Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.", TimeUnit.MILLISECONDS, temp_transicao);
                 GameOver();
+                ft_enter();
             }
             if (choice == 2) {
-                Digita("Escolha 2: Você escolheu a Ponte Travessa, e Devon conseguiu achar um atalho para chegar na Terra de Ninguém ", TimeUnit.MILLISECONDS, temp_dialog);
+                Digita("Escolha 2: Você escolheu a Ponte Travessa, e Devon conseguiu achar um atalho para chegar na Terra de Ninguém ", TimeUnit.MILLISECONDS, temp_transicao);
             } else {
-                OpcaoInvalidaOuInexistente();
+               
             }
         }while (choice < 1 || choice > 2);
     }
 
     private static void SegundoEnredo() throws Exception{
         Digita("Alguns dias depois..." + "\n " + "\nNARRADOR: "
-                + "\nDepois de uma longa jornada, Devon chegou em sua primeira batalha... \nE lá, Hasad lhe aguardava."
-                + "\n" + "\nDEVON: \nVIM EMBUSCA DO SEU PODER, HASAD!. E NÃO HÁ NADA QUE ME EMPEDIRÁ DE DERROTÁ-LO. "
+                + "\nDepois de uma longa jornada, Devon chegou em sua primeira batalha... \nE lá, Hasad lhe aguardava.",TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                enter();
+                System.out.println("\n");
+                Digita("\nDEVON: \nVIM EMBUSCA DO SEU PODER, HASAD!. E NÃO HÁ NADA QUE ME EMPEDIRÁ DE DERROTÁ-LO. "
                 + "\nDEUS HASAD:  \nQUEM VOCÊ PENSA QUE É PARA ESTAR FALANDO COMIGO ASSIM?"
                 + "\nEU SOU O GRANDE HASAD, DEUS METAMORFO." + "\nSAIA DAQUI ANTES QUE VEJA MINHA FÚRIA."
-                + "\nDEVON: \nVeremos essa fúria então, Hasad." + "\nDEUS HASAD:" + " \nVOCÊ FOI AVISADO, SEU TOLO.",
-                TimeUnit.MILLISECONDS, temp_dialog);
+                + "\nDEVON: \nVeremos essa fúria então, Hasad." + "\nDEUS HASAD:" + 
+                " \nVOCÊ FOI AVISADO, SEU TOLO.",TimeUnit.MILLISECONDS, temp_dialog);
     }
 
     private static void Desafio1() throws Exception{
         int escolha;
-        Digita ("\nNARRADOR: \n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\nE começa a luta entre Devon e Hasad, Deus Metamorfo.\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\nOs poderes de Hasad são impressionantes, já que ele pode se transformar em qualquer ser vivo e até objetos.\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\nDevon percebe que não será fácil e precisa usar mais seus poderes para conseguir derrotar Hasad.\n" + "\nPara isso precisará responder qual das alternativas abaixo corresponde para 4D2 em base hexadecimal para base decimal.\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\n1. 1234\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\n2. 4321\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\n3. 3241\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\n4. 4213\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\n5. 1342\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita ("\nFaça sua escolha:\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Digita ("\n\nNARRADOR:", TimeUnit.MILLISECONDS, temp_narrativa);
+        Digita ("\nE começa a luta entre Devon e Hasad, Deus Metamorfo.", TimeUnit.MILLISECONDS, temp_narrativa);
+        Digita ("\nOs poderes de Hasad são impressionantes, já que ele pode se transformar em qualquer ser vivo e até objetos.", TimeUnit.MILLISECONDS, temp_narrativa);
+        Digita ("\nDevon percebe que não será fácil e precisa usar mais seus poderes para conseguir derrotar Hasad." + "\nPara isso precisará responder: ", TimeUnit.MILLISECONDS, temp_narrativa);
+        System.out.println("\nqual das alternativas abaixo corresponde para 4D2 em base hexadecimal para base decimal.");
+        System.out.println("1. 1234");
+        System.out.println("2. 4321");
+        System.out.println("3. 3241");
+        System.out.println("4. 4213");
+        System.out.println("5. 1342");
+        System.out.println("\nFaça sua escolha:");
         escolha = scanner.nextInt();
         switch (escolha)
         {
             case 1:
-                System.out.println("\nE Devon consegue vencer Hasad! E agora tem 1 dos 6 Poderes Supremos dos Deuses. Meus parabéns, jogador.");
+            Digita ("\nNARRADOR: \nE Devon consegue vencer Hasad! E agora tem 1 dos 6 Poderes Supremos dos Deuses. Meus parabéns, jogador.", TimeUnit.MILLISECONDS, temp_narrativa);
                 break;
             case 2:
             case 3:
@@ -179,33 +183,39 @@ public class AllInOne {
                 break;
         }
     }
-
+    
     private static void TerceiroEnredo() throws Exception{
-        Digita("\nDEVON: \nEU CONSEGUI!! EU VENCIIII!" + "\nDEUS HASAD: Você...não sabe...o que está fazendo...garoto"
-        + "\nNARRADOR: \nE assim, Devon segue para o seu próximo Deus, o GRANDE Fieremana."
+        Digita("\nDEVON: \nEU CONSEGUI!! EU VENCIIII!" + "\nDEUS HASAD: Você...não sabe...o que está fazendo...garoto!", TimeUnit.MILLISECONDS, temp_dialog);
+        Digita("\n\nNARRADOR: \nE assim, Devon segue para o seu próximo Deus, o GRANDE Fieremana."
         + "\nFieremana é um Deus devorador, ou seja, ele basicamente come tudo o que deseja."
         + "\nNão será fácil para nosso Devon."
-        + "\nApós a grande luta com Hasad, Devon parou um pouco no caminho para recarregar suas energias para sua próxima batalha, e terá um longo caminho para chegar no Deus Fieremana."
-        + "\n\n---------------------------DESCANSO DE DEVON---------------------------"
-        + "\n\nApós seu descanso, Devon seguiu em frente e finalmente chegou na casa do Deus Fieremana."
-        + "\nDEUS FIEREMANA: \nQUEM OUSA ENTRAR EM MINHA CASA??"
+        + "\nApós a grande luta com Hasad, Devon parou um pouco no caminho para recarregar suas energias para sua próxima batalha, e terá um longo caminho para chegar no Deus Fieremana.", TimeUnit.MILLISECONDS, temp_narrativa);
+        System.out.println("\n");
+        enter();
+        System.out.println("\n---------------------------DESCANSO DE DEVON---------------------------");
+        System.out.println("\n");
+        enter();
+        Digita("Narrador: \nApós seu descanso, Devon seguiu em frente e finalmente chegou na casa do Deus Fieremana.", TimeUnit.MILLISECONDS, temp_narrativa);
+        Digita("\n\nDEUS FIEREMANA: \nQUEM OUSA ENTRAR EM MINHA CASA??"
         + "\nDEVON: \nOlá, Fieremana, sou Devon e estou aqui para basicamente te derrotar e pegar seus poderes."
         + "\nDEUS FIEREMANA: \nVOCÊ ME FAZ RIR, SEU NANICO. JÁ VIU MEU TAMANHO? COMO ACHA QUE VAI CONSEGUIR ME DERROTAR? NÃO ME FAÇA RIR."
-        + "\nDEVON: \nESTOU PRONTO, FIEREMANA"
-        + "\nNARRADOR: \nFieremana é um Deus guloso, come de tudo que está ao seu alcance por isso justifica seu enorme tamanho."
+        + "\nDEVON: \nESTOU PRONTO, FIEREMANA",TimeUnit.MILLISECONDS, temp_dialog);
+        System.out.println("\n");
+        enter();
+        Digita("\n\nNARRADOR: \nFieremana é um Deus guloso, come de tudo que está ao seu alcance por isso justifica seu enorme tamanho."
         + "\nFieremana nunca está satisfeito, e cabe até no seu cardápio seres humanos."
         + "\nPara conseguir derrotar Fieremana precisava resolver o desafio para conseguir mais poderes para derrotar o gigante Deus.",
-        TimeUnit.MILLISECONDS, temp_dialog);
+        TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
     private static void Desafio2() throws Exception{
         int resposta;
-    	DigitaLN("Qual das alternativas corresponde 651 em base decimal para base octal? ", TimeUnit.MILLISECONDS, temp_dialog);
-    	DigitaLN("1. 2234", TimeUnit.MILLISECONDS, temp_dialog);
-    	DigitaLN("2. 1132", TimeUnit.MILLISECONDS, temp_dialog);
-    	DigitaLN("3. 1211", TimeUnit.MILLISECONDS, temp_dialog);
-    	DigitaLN("4. 1231", TimeUnit.MILLISECONDS, temp_dialog);
-    	DigitaLN("5. 1213", TimeUnit.MILLISECONDS, temp_dialog);
+    	System.out.println("Qual das alternativas corresponde 651 em base decimal para base octal? ");
+    	System.out.println("1. 2234");
+    	System.out.println("2. 1132");
+    	System.out.println("3. 1211");
+    	System.out.println("4. 1231");
+    	System.out.println("5. 1213");
     	resposta = scanner.nextInt();
     	
     	switch (resposta) 
@@ -224,19 +234,19 @@ public class AllInOne {
     }
 
     private static void TerceiroEnredoDecisaoPósDesafio() throws Exception{
-        DigitaLN("NARRADOR", TimeUnit.MILLISECONDS, temp_dialog);
-        DigitaLN("Fieremana não foi fácil para Devon, mas conseguiu derrotá-lo. Mas ainda assim, o caminho era longo, ainda temos mais 4 Deuses pela frente.", TimeUnit.MILLISECONDS, temp_dialog);
-        DigitaLN("Havia dois caminhos para seguir, mas qual o certo?", TimeUnit.MILLISECONDS, temp_dialog);
-        DigitaLN("\n1.Ir pelo caminho da Floresta Negra", TimeUnit.MILLISECONDS, temp_dialog);
-        DigitaLN("\n2.2.Seguir para um caminho desconhecido", TimeUnit.MILLISECONDS, temp_dialog);
+        DigitaLN("NARRADOR", TimeUnit.MILLISECONDS, temp_narrativa);
+        DigitaLN("Fieremana não foi fácil para Devon, mas conseguiu derrotá-lo. Mas ainda assim, o caminho era longo, ainda temos mais 4 Deuses pela frente.", TimeUnit.MILLISECONDS, temp_narrativa);
+        DigitaLN("Havia dois caminhos para seguir, mas qual o certo?", TimeUnit.MILLISECONDS, temp_narrativa);
+        DigitaLN("\n1.Ir pelo caminho da Floresta Negra", TimeUnit.MILLISECONDS, temp_narrativa);
+        DigitaLN("\n2.2.Seguir para um caminho desconhecido", TimeUnit.MILLISECONDS, temp_narrativa);
         choice = scanner.nextInt();
         do
         {
             if(choice == 1){
-                DigitaLN("\nEscolha 1: Ainda bem! Escolheu o melhor caminho para chegar ao seu próximo Deus.", TimeUnit.MILLISECONDS, temp_dialog);
+                DigitaLN("\nEscolha 1: Ainda bem! Escolheu o melhor caminho para chegar ao seu próximo Deus.", TimeUnit.MILLISECONDS, temp_transicao);
             }
             if(choice == 2){
-                DigitaLN("\nEscolheu 2: Tem o nome de Caminho Desconhecido por um motivo, volte para o começo.", TimeUnit.MILLISECONDS, temp_dialog);
+                DigitaLN("\nEscolheu 2: Tem o nome de Caminho Desconhecido por um motivo, volte para o começo.", TimeUnit.MILLISECONDS, temp_transicao);
                 GameOver();
             }else{
                 DigitaLN("Opção inválida ou inexistente!", TimeUnit.MILLISECONDS, temp_dialog);
@@ -245,13 +255,15 @@ public class AllInOne {
     }
 
     private static void TerceiroEnredoFinal() throws Exception{
-        Digita("\nAgora, Devon segue para deu terceiro Deusa, Egoyis." + "\nO Deus Egoyis é uma deusa controladora."
+        Digita("Narrador: \nAgora, Devon segue para deu terceiro Deusa, Egoyis." + "\nO Deus Egoyis é uma deusa controladora."
         + "\nEla consegue entrar em sua mente para realizar tudo o que deseja."
         + "\nSempre pensando nela e apenas nela." + "\nDevon terá muita batalha pela frente",
-        TimeUnit.MILLISECONDS, temp_dialog);
+        TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
     private static void QuartoEnredo() throws Exception{
+        System.out.println("\n");
+        enter();
         Digita("\nDEUSA EGOYIS: \nOlá, Devon." + "\nBem-vindo a minha humilde residência. Eu estava te aguardando."
             + "\nDEVON: \nComo você sabia que eu estava vindo?" + "\nDEUSA EGOYIS: Está brincando?"
             + "\nSou o Deus controlador de mentes, consigo saber de tudo o que está acontecendo." + "\nTUDO."
@@ -261,9 +273,12 @@ public class AllInOne {
             + "\nMas vamos lá, Deus Controlador."
             + "\nNARRADOR: \nDevon subestimou Egoyis, e agora precisará resolver o desafio para conseguir derrotá-la.", 
         TimeUnit.MILLISECONDS, temp_dialog);
+        System.out.println("\n");
+        enter();
     }
 
     private static void Desafio3() throws Exception{
+    
         int resposta;
         System.out.println("Para derrotar Egoyis responda, simplifique o radical raiz quadrada de 27 e selecione a opção correta");
         System.out.println("1. raiz quadrada de 3");
@@ -294,23 +309,26 @@ public class AllInOne {
     private static void QuartoEnredoFinal() throws Exception{
         Digita("\nNARRADOR: \nE Devon, consegue vencer o Deusa Egoyis, e segue para o quarto Deus."
             + "\nAgora para seguir com seu destino, Devon irá tirar um descanso para sua próxima batalha.",
-        TimeUnit.MILLISECONDS, temp_dialog);
+        TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
     private static void QuartoEnredoDecisao() throws Exception{
-        DigitaLN("-------------------------------DESCANSO DE DEVON------------------------------------",TimeUnit.MILLISECONDS, temp_dialog);
-        DigitaLN("ESCOLHA O QUE DEVON DEVE FAZER.",TimeUnit.MILLISECONDS, temp_dialog);
-        DigitaLN("\n1. Deixar Devon descansar mais um pouco para que não tenha mais que descansar depois.",TimeUnit.MILLISECONDS, temp_dialog);
-        DigitaLN("\n2. Acordar Devon para chegar na casa de Lust.",TimeUnit.MILLISECONDS, temp_dialog);
+        DigitaLN("\n-------------------------------DESCANSO DE DEVON------------------------------------",TimeUnit.MILLISECONDS, temp_transicao);
+        System.out.println("\n");
+        
+        DigitaLN("ESCOLHA O QUE DEVON DEVE FAZER.",TimeUnit.MILLISECONDS,temp_transicao);
+        DigitaLN("\n1. Deixar Devon descansar mais um pouco para que não tenha mais que descansar depois.",TimeUnit.MILLISECONDS,temp_transicao);
+        DigitaLN("\n2. Acordar Devon para chegar na casa de Lust.",TimeUnit.MILLISECONDS,temp_transicao);
         choice = scanner.nextInt();
         do
         {
             if(choice == 1){
                 DigitaLN("\nZzz...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                QuartoEnredoDecisao();
             }
             if(choice == 2){
                 DigitaLN("\nACORDAR DEVON...", TimeUnit.MILLISECONDS, temp_dialog);
-                GameOver();
+                
             }else{
                 OpcaoInvalidaOuInexistente();
             }
@@ -319,31 +337,39 @@ public class AllInOne {
     }
 
     private static void QuintoEnredo() throws Exception{
-        Digita("\nNARRADOR: \nApós um longo caminho, Devon chegou na casa da Deusa Luts."
-            + "\nDEVON: \nDEUSA LUTS, VIM AQUI PARA CUMPRIR MEU DESTINO. +\nDERROTÁ-LA E PEGAR O QUE ME PERTENCE. \nOS SEUS PODERES."
+        System.out.println("\n");
+        enter();
+        Digita("\nNARRADOR: \nApós um longo caminho, Devon chegou na casa da Deusa Luts.", 
+        TimeUnit.MILLISECONDS, temp_narrativa);
+        System.out.println("\n");
+        enter();
+        Digita("\nDEVON: \nDEUSA LUTS, VIM AQUI PARA CUMPRIR MEU DESTINO. +\nDERROTÁ-LA E PEGAR O QUE ME PERTENCE. \nOS SEUS PODERES."
             + "\nDEUSA LUTS: \nDevon, se sabe quem eu sou não vai querer lutar comigo."
             + "\nAté porque, nem eu quero lutar com você."
             + "\nVocê é um ser inferior. + \nVocê não é digno de lutar comigo e muito menos ter meus poderes."
             + "\nDEVON: \nJá derrotei 3 deuses, Luts. + \nNão tenho medo de você. + \nVamos começar logo com isso."
-            + "\nDEUSA LUTS: \nJá que é isso o que você deseja."
-            + "\nNARRADOR: \nE começa a batalha entre Luts e Devon."
+            + "\nDEUSA LUTS: \nJá que é isso o que você deseja.",TimeUnit.MILLISECONDS, temp_dialog);
+            enter();
+            Digita("\nNARRADOR: \nE começa a batalha entre Luts e Devon."
             + "\nLuts é uma deusa que não aparenta a idade que possui."
             + "\nEla possui super resistência e poderes de regeneração."
             + "\nPraticamente impossível de ganhar dela em uma batalha."
             + "\nAlém disso, ela possui garras super afiadas possíveis de cortar qualquer tipo de material."
             + "\nEla é uma grande Deusa e não será nenhum pouco fácil ganhar dela.", 
-        TimeUnit.MILLISECONDS, temp_dialog);
+        TimeUnit.MILLISECONDS, temp_narrativa);
+        System.out.println("\n");
+        enter();
     }
 
     private static void Desafio4() throws Exception{
         System.out.println("\nDeusa Lust não esperava que ele conseguisse chegar tão longe, ao ponto de derrubá-la.\n"
                 + "E para finalizar, precisa resolver o desafio:");
         System.out.println("\nDesenvolva a equação de primeiro grau 4x - 8 = 6 + 2x para finalizar a Deusa Lust.");
-        System.out.println("\n1. 8");
-        System.out.println("\n2. 5");
-        System.out.println("\n3. 7");
-        System.out.println("\n4. 9");
-        System.out.println("\n5. 6");
+        System.out.println("1. 8");
+        System.out.println("2. 5");
+        System.out.println("3. 7");
+        System.out.println("4. 9");
+        System.out.println("5. 6");
         int escolha;
         System.out.println("\nFaça sua escolha:");
         escolha = scanner.nextInt();
@@ -365,28 +391,29 @@ public class AllInOne {
     }
 
     private static void QuintoEnredoFinal() throws Exception{
-        Digita("\nA Deusa com suas últmas forças, falou suas últimas palavras."
-        + "\nDEUSA LUST: \nVocê me impressionou. Meus parabéns, garoto.", TimeUnit.MILLISECONDS, temp_dialog);
+        Digita("\nA Deusa com suas últmas forças, falou suas últimas palavras..."
+        + "\n\nDEUSA LUST: \nVocê me impressionou. Meus parabéns, garoto...", TimeUnit.MILLISECONDS, temp_dialog);
     }
 
     private static void SextoEnredo() throws Exception{
-        Digita("\nNARRADOR: \nE assim, finalizou a batalha."
+        Digita("\n\nNARRADOR: \nE assim, finalizou a batalha."
             + "\nDevon está cada vez mais forte, já qu agora está com 4 Poderes Supremos."
             + "\nSerá possível que seu destino será realizado? Tudo voltará como deve ser?"
             + "\nDevon segue seu caminho para o próximo Deus. O Deus do fogo, Krieg."
             + "\nKrieg é um deus perverso, gosta de provocar dor e sofrimento quando tem a chance."
-            + "\nEle possui grandes poderes de fogo." + "\nConsegue fazer qualquer coisa com o seu elemento."
-            + "\n\n-----------------------CHEGANDO NA CASA DE KRIEG-----------------------"
-            + "\nDEUS KRIEG: \nOlá olá olá, Devon, meu querido. Ouvi falar tanto de você."
+            + "\nEle possui grandes poderes de fogo." + "\nConsegue fazer qualquer coisa com o seu elemento.",TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n\n-----------------------CHEGANDO NA CASA DE KRIEG-----------------------");
+            enter();
+            Digita("\nDEUS KRIEG: \nOlá olá olá, Devon, meu querido. Ouvi falar tanto de você."
             + "\nDerrotou meus queridíssimos amigos que eu tanto gostava."
             + "\nQue peninha. Eles não foram fortes o suficiente para derrotar você."
             + "\nMas adivinhe, EU SOU O SUFICIENTE HA-HA-HA-HA."
             + "\nDEVON: \nUAU, Krieg. Que bela introdução. Vamos ver se você é tudo isso mesmo."
             + "\nDEUS KRIEG: \nVOCÊ ESTÁ ME DESAFIANDO, GAROTO? QUEM VOCÊ PENSA QUE É?"
-            + "\nDEVON: \nEU SOU O DEUS DO FOGO!"
-            + "\nNARRADOR: \nKrieg fica furioso com o sarcasmo de Devon e por isso começam uma sangrenta batalha."
+            + "\nDEVON: \nEU SOU O DEUS DO FOGO!",TimeUnit.MILLISECONDS, temp_dialog);
+            Digita("\n\nNARRADOR: \nKrieg fica furioso com o sarcasmo de Devon e por isso começam uma sangrenta batalha."
             + "\nPara Devon ganhar de Krieg rapidamente, ele precisa resolver logo o desafio, já que Krieg não está deixando fácil para ele.",
-            TimeUnit.MILLISECONDS, temp_dialog);
+            TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
     private static void Desafio5() throws Exception{
@@ -417,6 +444,7 @@ public class AllInOne {
             break;
         default:
             OpcaoInvalidaOuInexistente();
+            break;
     	}
     	
     }
@@ -527,22 +555,30 @@ public class AllInOne {
         int escolha = 0;
         do
         {
-            Digita("\n\n1 - Continuar\n2 - Sair\n\nDigite sua opção: ", TimeUnit.MILLISECONDS, temp_dialog);
+            Digita("\n\n1 - Continuar\n2 - Voltar\n\nDigite sua opção: ", TimeUnit.MILLISECONDS, temp_transicao);
             escolha = scanner.nextInt();
             if(escolha == 1){
                 acertos = false;
                 System.out.println("\n");
+                System.out.println("\nVoce esta em queda permanante.");
+                System.out.println("\n\n\n                    Game Over.");
+            
             }
             if (escolha == 2){
                 System.exit(0);
             }
-            if(escolha != 1 || escolha != 2){
-                System.out.println("Opção inválida ou inexistente.");
+            else if(escolha != 1 || escolha != 2){
+                
             }
         }while(escolha < 1 || escolha > 2);
     }
 
+    private static void enter() throws Exception {
+    System.out.println("\n>>Aperte \"Enter\" para seguir");
+    scanner.nextLine();
+}
     private static void ft_enter() throws Exception {
+        System.out.println("\n>>Aperte \"Enter\" para começar o jogo");
         scanner.nextLine();
         scanner.nextLine();
     }
@@ -564,12 +600,12 @@ public class AllInOne {
     }
 
     private static void Instrucoes() throws InterruptedException {
-        Digita("\n==================================================================================================================================================\n", TimeUnit.MILLISECONDS, temp_dialog);
+        System.out.println("==================================================================================================================================================\n");
         Digita("Devon é um jogo de perguntas e respostas, onde o jogador enfrenta desafios para progredir na historia;\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("Os desafios são compostos por 6 desafios e 5 alternativas: (A, B, C, D, E) onde serão testados seus conhecimentos referente a matéria de matematica;\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("Para selecionar as respostas, você deve digitar a letra correspodente a alternativa que considera correta;\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("Não há chances para erro. Caso erre qualquer questão, o jogo será reiniciado.\n", TimeUnit.MILLISECONDS, temp_dialog);
-        System.out.print("\n>> Pressione\" Enter\" para mostrar o MENU novamente: ");
+        System.out.print("\n>> Pressione\" Enter\" para mostrar o MENU novamente ");
     }
 
     public static void Digita(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
