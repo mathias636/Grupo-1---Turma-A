@@ -103,17 +103,17 @@ public class AllInOne {
     }
 
     private static void PrimeiroEnredo() throws Exception{
-        Digita("\nMEFISTO: Seja Bem Vindo, meu caro jogador. Sou Mefisto, e você, como se chamas?",TimeUnit.MILLISECONDS, temp_dialog);
+        Digita("\nMEFISTO: Seja bem vindo, meu caro jogador. Sou Mefisto, e você, como se chamas?",TimeUnit.MILLISECONDS, temp_dialog);
             Digita("\nDEVON: \nMe chamo Devon "
             + "\nMEFISTO: \nDEVON? DEVON, O MÍSTICO? NÃO É POSSÍVEL!! É VOCÊ? O ESCOLHIDO??"
             + "\nDEVON: \nEU? ESCOLHIDO? "
-            + "\nMEFISTO: \nSim, Devon. O ESCOLHIDO. Vivemos neste Mundo caótico, podre e sem vida. Um mundo onde a ignorância e a ganância são os líderes."
+            + "\nMEFISTO: \nSim, Devon. O ESCOLHIDO. Vivemos neste mundo caótico, podre e sem vida. Um mundo onde a ignorância e a ganância são os líderes."
             + "\nE você foi escolhido, sim, exatamente, você foi ESCOLHIDO. VOCÊ, DEVON. O MÍSTICO."
             + "\nSeu destino, Devon, é dar a VIDA de volta ao Mundo, e que tudo volte ao seu devido e correto lugar."
             + "\nPara que TUDO funcione novamente. Fazer com que tudo seja eliminado."
-            + "\nNão será fácil, para termos essa conquista, pode até custar a sua vida."
+            + "\nNão será fácil! Para termos essa conquista, pode até custar a sua vida."
             + "\nDEVON: \nMas, Mefisto, não tenho poderes para tal conquista. Como vou fazer isso acontecer? Não tem como eu conseguir."
-            + "\nMEFISTO: \nHA-HA-HA-HA VOCÊ PRECISARÁ DOS PODERES DOS 6 DEUSES MAIS PODEROSOS DO MUNDO PARA CONSEGUIR. PARA DERROTÁ-LOS VOU LHE DAR UM BELO DE UM UPGRADE."
+            + "\nMEFISTO: \nHA-HA-HA-HA VOCÊ PRECISARÁ DOS PODERES DOS 6 DEUSES MAIS PODEROSOS DO MUNDO PARA CONSEGUIR. PARA DERROTÁ-LOS, VOU LHE DAR UM BELO DE UM UPGRADE."
             + "\nAQUI, RECEBA GLADIUS, SUA MAIS NOVA LEAL COMPANHEIRA. ELA IRÁ TE GUIAR E TE DAR FORÇAS PARA AS NOVAS BATALHAS."
             + "\nE ASSIM, QUANDO CONSEGUIR OS 6 PODERES SUPREMOS, TUDO FICARÁ DO JEITO QUE DEVE SER."
             + "\nDEVON: \nE por onde eu devo começar?"
@@ -122,7 +122,7 @@ public class AllInOne {
             enter();     
             Digita("\n " + "\nNARRADOR: \nE começa a jornada de DEVON."
             + "\nSeu primeiro Deus é Hasada, que mora em Terra de Ninguém."
-            + "\nMas para chegar lá, precisa escolhar o caminho correto" + "\nPara onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_narrativa);
+            + "\nMas para chegar lá, precisa escolher o caminho correto" + "\nPara onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_narrativa);
         do {
             System.out.println("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção: ");
             choice = scanner.nextInt();
@@ -145,7 +145,7 @@ public class AllInOne {
                 System.out.println("\n");
                 enter();
                 System.out.println("\n");
-                Digita("\nDEVON: \nVIM EMBUSCA DO SEU PODER, HASAD!. E NÃO HÁ NADA QUE ME EMPEDIRÁ DE DERROTÁ-LO. "
+                Digita("\nDEVON: \nVIM EM BUSCA DO SEU PODER, HASAD! E NÃO HÁ NADA QUE ME IMPEDIRÁ DE DERROTÁ-LO. "
                 + "\nDEUS HASAD:  \nQUEM VOCÊ PENSA QUE É PARA ESTAR FALANDO COMIGO ASSIM?"
                 + "\nEU SOU O GRANDE HASAD, DEUS METAMORFO." + "\nSAIA DAQUI ANTES QUE VEJA MINHA FÚRIA."
                 + "\nDEVON: \nVeremos essa fúria então, Hasad." + "\nDEUS HASAD:" + 
@@ -157,8 +157,8 @@ public class AllInOne {
         Digita ("\n\nNARRADOR:", TimeUnit.MILLISECONDS, temp_narrativa);
         Digita ("\nE começa a luta entre Devon e Hasad, Deus Metamorfo.", TimeUnit.MILLISECONDS, temp_narrativa);
         Digita ("\nOs poderes de Hasad são impressionantes, já que ele pode se transformar em qualquer ser vivo e até objetos.", TimeUnit.MILLISECONDS, temp_narrativa);
-        Digita ("\nDevon percebe que não será fácil e precisa usar mais seus poderes para conseguir derrotar Hasad." + "\nPara isso precisará responder: ", TimeUnit.MILLISECONDS, temp_narrativa);
-        System.out.println("\nqual das alternativas abaixo corresponde para 4D2 em base hexadecimal para base decimal.");
+        Digita ("\nDevon percebe que não será fácil e precisa usar mais de seus poderes para conseguir derrotar Hasad." + "\nPara isso precisará responder: ", TimeUnit.MILLISECONDS, temp_narrativa);
+        System.out.println("\nQual das alternativas abaixo corresponde a 4D2 em base hexadecimal para base decimal.");
         System.out.println("1. 1234");
         System.out.println("2. 4321");
         System.out.println("3. 3241");
@@ -186,7 +186,7 @@ public class AllInOne {
     
     private static void TerceiroEnredo() throws Exception{
         Digita("\nDEVON: \nEU CONSEGUI!! EU VENCIIII!" + "\nDEUS HASAD: Você...não sabe...o que está fazendo...garoto!", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita("\n\nNARRADOR: \nE assim, Devon segue para o seu próximo Deus, o GRANDE Fieremana."
+        Digita("\n\nNARRADOR: \nE assim, Devon segue para o próximo Deus, o GRANDE Fieremana."
         + "\nFieremana é um Deus devorador, ou seja, ele basicamente come tudo o que deseja."
         + "\nNão será fácil para nosso Devon."
         + "\nApós a grande luta com Hasad, Devon parou um pouco no caminho para recarregar suas energias para sua próxima batalha, e terá um longo caminho para chegar no Deus Fieremana.", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -202,9 +202,9 @@ public class AllInOne {
         + "\nDEVON: \nESTOU PRONTO, FIEREMANA",TimeUnit.MILLISECONDS, temp_dialog);
         System.out.println("\n");
         enter();
-        Digita("\n\nNARRADOR: \nFieremana é um Deus guloso, come de tudo que está ao seu alcance por isso justifica seu enorme tamanho."
-        + "\nFieremana nunca está satisfeito, e cabe até no seu cardápio seres humanos."
-        + "\nPara conseguir derrotar Fieremana precisava resolver o desafio para conseguir mais poderes para derrotar o gigante Deus.",
+        Digita("\n\nNARRADOR: \nFieremana é um Deus guloso, come de tudo que está ao seu alcance, isso justifica seu enorme tamanho."
+        + "\nFieremana nunca está satisfeito, e seu cardápio é composto até por seres humanos."
+        + "\nPara conseguir derrotar Fieremana, Devon precisa resolver o desafio para conseguir mais poderes e derrotar o gigante Deus.",
         TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
@@ -255,7 +255,7 @@ public class AllInOne {
     }
 
     private static void TerceiroEnredoFinal() throws Exception{
-        Digita("Narrador: \nAgora, Devon segue para deu terceiro Deusa, Egoyis." + "\nO Deus Egoyis é uma deusa controladora."
+        Digita("Narrador: \nAgora, Devon segue para a terceira Deusa, Egoyis." + "\nEgoyis é uma deusa controladora."
         + "\nEla consegue entrar em sua mente para realizar tudo o que deseja."
         + "\nSempre pensando nela e apenas nela." + "\nDevon terá muita batalha pela frente",
         TimeUnit.MILLISECONDS, temp_narrativa);
@@ -307,7 +307,7 @@ public class AllInOne {
     }
 
     private static void QuartoEnredoFinal() throws Exception{
-        Digita("\nNARRADOR: \nE Devon, consegue vencer o Deusa Egoyis, e segue para o quarto Deus."
+        Digita("\nNARRADOR: \nE Devon, consegue vencer a Deusa Egoyis, e segue para o quarto Deus."
             + "\nAgora para seguir com seu destino, Devon irá tirar um descanso para sua próxima batalha.",
         TimeUnit.MILLISECONDS, temp_narrativa);
     }
@@ -344,7 +344,7 @@ public class AllInOne {
         System.out.println("\n");
         enter();
         Digita("\nDEVON: \nDEUSA LUTS, VIM AQUI PARA CUMPRIR MEU DESTINO. +\nDERROTÁ-LA E PEGAR O QUE ME PERTENCE. \nOS SEUS PODERES."
-            + "\nDEUSA LUTS: \nDevon, se sabe quem eu sou não vai querer lutar comigo."
+            + "\nDEUSA LUTS: \nDevon, se você sabe quem eu sou, não vai querer lutar comigo."
             + "\nAté porque, nem eu quero lutar com você."
             + "\nVocê é um ser inferior. + \nVocê não é digno de lutar comigo e muito menos ter meus poderes."
             + "\nDEVON: \nJá derrotei 3 deuses, Luts. + \nNão tenho medo de você. + \nVamos começar logo com isso."
@@ -354,16 +354,16 @@ public class AllInOne {
             + "\nLuts é uma deusa que não aparenta a idade que possui."
             + "\nEla possui super resistência e poderes de regeneração."
             + "\nPraticamente impossível de ganhar dela em uma batalha."
-            + "\nAlém disso, ela possui garras super afiadas possíveis de cortar qualquer tipo de material."
-            + "\nEla é uma grande Deusa e não será nenhum pouco fácil ganhar dela.", 
+            + "\nAlém disso, ela possui garras super afiadas, sendo possível cortar qualquer tipo de material."
+            + "\nEla é uma grande Deusa e não será fácil ganhar dela.", 
         TimeUnit.MILLISECONDS, temp_narrativa);
         System.out.println("\n");
         enter();
     }
 
     private static void Desafio4() throws Exception{
-        System.out.println("\nDeusa Lust não esperava que ele conseguisse chegar tão longe, ao ponto de derrubá-la.\n"
-                + "E para finalizar, precisa resolver o desafio:");
+        System.out.println("\nDeusa Lust não esperava que Devon conseguisse chegar tão longe, ao ponto de derrubá-la.\n"
+                + "E para finalizar, resolva o desafio:");
         System.out.println("\nDesenvolva a equação de primeiro grau 4x - 8 = 6 + 2x para finalizar a Deusa Lust.");
         System.out.println("1. 8");
         System.out.println("2. 5");
@@ -397,8 +397,8 @@ public class AllInOne {
 
     private static void SextoEnredo() throws Exception{
         Digita("\n\nNARRADOR: \nE assim, finalizou a batalha."
-            + "\nDevon está cada vez mais forte, já qu agora está com 4 Poderes Supremos."
-            + "\nSerá possível que seu destino será realizado? Tudo voltará como deve ser?"
+            + "\nDevon está cada vez mais forte, já que agora está com 4 Poderes Supremos."
+            + "\nSerá possível que seu destino será realizado? Tudo voltará a ser como deve?"
             + "\nDevon segue seu caminho para o próximo Deus. O Deus do fogo, Krieg."
             + "\nKrieg é um deus perverso, gosta de provocar dor e sofrimento quando tem a chance."
             + "\nEle possui grandes poderes de fogo." + "\nConsegue fazer qualquer coisa com o seu elemento.",TimeUnit.MILLISECONDS, temp_dialog);
@@ -454,8 +454,8 @@ public class AllInOne {
             + "\nEle precisa ir o mais rápido possível para conseguir o ÚLTIMO Poder Supremo."
             + "\nE ela já está aguardando por ele." + "\nEla é Shi. A Deusa da Morte."
             + "\nShi é a mais forte dos Deuses, acho que pelo nome já deu para entender seus poderes."
-            + "\nA Deusa Shi tem seu corpo e alma extremamente protegido." + "\nEla não sente nenhum tipo de dor."
-            + "\nShi é uma Deusa que não pode ser controlada." + "\nNada pode atingir ela."
+            + "\nA Deusa Shi tem seu corpo e alma extremamente protegidos." + "\nEla não sente nenhum tipo de dor."
+            + "\nShi é uma Deusa que não pode ser controlada." + "\nNada pode atingi-la."
             + "\nAtualmente, Devon está com 5 dos 6 Poderes Supremos. Será que eles são o suficiente para derrotar a Deusa Shi? Será que ELE é suficiente?"
             + "\nDevon está pensando na combinação perfeita dos poderes para conseguir derrotar a Deusa Shi."
             + "\n\n-----------------------A CAMINHO DA TORRE DE SHI-----------------------"
@@ -466,7 +466,7 @@ public class AllInOne {
             + "\nSoube que teve algumas pedras no caminho, mas conseguiu."
             + "\nDEVON: \nÉ, não foi tão difícil assim. Essas tais pedras..."
             + "\nDEUSA SHI: \nCerto. Espero que tenha gostado do público que eu juntei para você."
-            + "\nDEVON: \nÉ realmente impressionante, obrigada." + "\nDEUSA SHI: Não há de que, Devon."
+            + "\nDEVON: \nÉ realmente impressionante, obrigado." + "\nDEUSA SHI: Não há de que, Devon."
             + "\nAgora me conte, está aqui pelo tal destino que Mefisto te deu?"
             + "\nEu imagino que sim. Aquele velho fala demais."
             + "\nO Mundo está do jeito que está por conta da podridão do ser humano."
@@ -513,7 +513,7 @@ public class AllInOne {
                 break;
             case 4:
                 System.out.println(
-                        "Devon, VOCÊ CONSEGUIU!! CONQUISTOU TODOS OS 6 PODERES SUPREMOS DOS DEUSES.Agora cumpra seu destino.");
+                        "Devon, VOCÊ CONSEGUIU!! CONQUISTOU TODOS OS 6 PODERES SUPREMOS DOS DEUSES. Agora cumpra seu destino.");
                 break;
             case 5:
                 System.out.println(
@@ -528,10 +528,10 @@ public class AllInOne {
             + "\n\n-----------------------CAMINHO PARA CHEGAR NA CASA DE MEFISTO-----------------------"
             + "\nMEFISTO: \nVOCÊ CONSEGUIU!! DEVON, VOCÊ CONSEGUIU!!!!"
             + "\nSinceramente por um instante achei que não iria conseguir mas VOCÊ DERROTOU TODOS!!"
-            + "\nAGORA CHEGOU O MOMENTO DE FINALIZAR SEU DESTINO." + "\nDEVON: \nObrigada, Mefisto."
+            + "\nAGORA CHEGOU O MOMENTO DE FINALIZAR SEU DESTINO." + "\nDEVON: \nObrigado, Mefisto."
             + "\nAgora podemos finalizar meu destino. O que devemos fazer?"
-            + "\nAgora meu menino, basta concentrar seus poderes e pensar no Mundo que você sempre desejou, e nunca pôde ter."
-            + "\nEstarei sempre ao seu lado." + "\nDEVON: \nTudo bem." + "\nO Mundo que eu sempre quis..."
+            + "\nAgora meu menino, basta concentrar seus poderes e pensar no mundo que você sempre desejou, e nunca pôde ter."
+            + "\nEstarei sempre ao seu lado." + "\nDEVON: \nTudo bem." + "\nO mundo que eu sempre quis..."
             + "\n\n-----------------------DEVON IMAGINANDO O MUNDO PERFEITO-----------------------"
             + "\nDEVON: \nEstá feito." + "\nMEFISTO: Muito bem, meu garoto. Como você pens..."
             + "\nO..que.. está.. acontecendo? Eu... estou... desaparecendo..."
@@ -539,7 +539,7 @@ public class AllInOne {
             + "\nNesse exato momento, metade da população do Mundo está sendo aniquilada."
             + "\nTudo está ficando do jeito que deve ser."
             + "\nE relaxa, não é nada pessoal. As pessoas são aleatórias, assim como você."
-            + "\nAgora o Mundo está perfeito. E vou tomar conta dele."
+            + "\nAgora o mundo está perfeito. E vou tomar conta dele."
             + "\nMEFISTO: \nMas... não era pra... ser desse... jeito... garoto" + "\nO que... você... fez..."
             + "\nDEVON: \nAdeus, Mefisto."
             + "\nNARRADOR: Infelizmente, Devon aniquilou metade da população mundial."
@@ -586,7 +586,7 @@ public class AllInOne {
 
     private static void Creditos() throws InterruptedException {
         Digita("\n********************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita("** 'Devon' Foi desenvolvido como parte do projeto integrador do curso de Analise e desenvolvimento de Sitemas no Senac        **\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Digita("** 'Devon' Foi desenvolvido como parte do projeto integrador do curso de Analise e Desenvolvimento de Sitemas no Senac        **\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("** O grupo de desenvolvimento é composto por:                                                                                 **"+
         "\n**                                                                                                                            **"+
         "\n** • Elton Freitas                                                                                                            **"+
