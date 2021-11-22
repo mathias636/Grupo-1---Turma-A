@@ -10,8 +10,9 @@ public class AllInOne {
     public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
     public static long tempo_mensagem = 0;
     /*
-    abaixo, variáveis para condicionais do Jogo(), scanner,  e GameOver(); 
+    abaixo, variáveis para condicionais do Jogo(), scanner,  e ContinuarVoltar(); 
     */
+    public static int Contexto_ContinuarVoltar;
     public static boolean acertos;
     public static Scanner scanner = new Scanner(System.in);
     public static int choice;
@@ -27,26 +28,26 @@ public class AllInOne {
         int escolha_do_menu = 0;
         do
         {
-            Digita("\n-- DEVON --\n"+"\n1- Instruções\n2- Jogar\n3- Créditos\n4- Sair\n"+"\nDigite sua opção: ",TimeUnit.MILLISECONDS, temp_transicao);
+            Digita("\n-- DEVON --\n"+"\n1- Instruções\n2- Jogar\n3- Créditos\n4- Sair\n"+"\nDigite sua opção:\n",TimeUnit.MILLISECONDS, temp_transicao);
             escolha_do_menu = scanner.nextInt();
             switch (escolha_do_menu)
             {
                 case 1:
                     Instrucoes();
-                    ft_enter();
+                    ft_enter_menu();
                     break;
                 case 2:
-                    ft_enter();
+                    ft_enter_comeca_jogo();
                     break;
                 case 3:
                     Creditos();
-                    ft_enter();
+                    ft_enter_menu();
                     break;
                 case 4:
                     System.out.println("SAINDO DO JOGO...");
                     System.exit(0);
                 default:
-                    ft_enter();
+                    OpcaoInvalidaOuInexistente();
                     break;
 
             }
@@ -65,6 +66,8 @@ public class AllInOne {
         {
             acertos = true;
             PrimeiroEnredo();
+            Contexto_ContinuarVoltar = 1;
+            PrimeiroEnredoDecisao();
             if(acertos == true){
                 SegundoEnredo();
                 Desafio1();
@@ -74,6 +77,7 @@ public class AllInOne {
                 Desafio2();
             }
             if(acertos == true){
+                Contexto_ContinuarVoltar = 2;
                 TerceiroEnredoDecisaoPósDesafio();
             }
             if(acertos == true){
@@ -83,6 +87,7 @@ public class AllInOne {
             }
             if(acertos == true){
                 QuartoEnredoFinal();
+                Contexto_ContinuarVoltar = 3;
                 QuartoEnredoDecisao();
                 QuintoEnredo();
                 Desafio4();
@@ -104,7 +109,7 @@ public class AllInOne {
 
     private static void PrimeiroEnredo() throws Exception{
         Digita("\nMEFISTO: Seja bem vindo, meu caro jogador. Sou Mefisto, e você, como se chamas?",TimeUnit.MILLISECONDS, temp_dialog);
-            Digita("\nDEVON: \nMe chamo Devon "
+        Digita("\nDEVON: \nMe chamo Devon "
             + "\nMEFISTO: \nDEVON? DEVON, O MÍSTICO? NÃO É POSSÍVEL!! É VOCÊ? O ESCOLHIDO??"
             + "\nDEVON: \nEU? ESCOLHIDO? "
             + "\nMEFISTO: \nSim, Devon. O ESCOLHIDO. Vivemos neste mundo caótico, podre e sem vida. Um mundo onde a ignorância e a ganância são os líderes."
@@ -117,24 +122,30 @@ public class AllInOne {
             + "\nAQUI, RECEBA GLADIUS, SUA MAIS NOVA LEAL COMPANHEIRA. ELA IRÁ TE GUIAR E TE DAR FORÇAS PARA AS NOVAS BATALHAS."
             + "\nE ASSIM, QUANDO CONSEGUIR OS 6 PODERES SUPREMOS, TUDO FICARÁ DO JEITO QUE DEVE SER."
             + "\nDEVON: \nE por onde eu devo começar?"
-            + "\nMEFISTO: \nA partir de agora é com você. Você já sabe o que fazer. \nBoa sorte, Devon, O Místico.",TimeUnit.MILLISECONDS, temp_dialog);
-           System.out.println("\n");
-            enter();     
-            Digita("\n " + "\nNARRADOR: \nE começa a jornada de DEVON."
+            + "\nMEFISTO: \nA partir de agora é com você. Você já sabe o que fazer. \nBoa sorte, Devon, O Místico.", TimeUnit.MILLISECONDS, temp_dialog);
+        enter();
+        Digita("\nNARRADOR: \nE começa a jornada de DEVON."
             + "\nSeu primeiro Deus é Hasada, que mora em Terra de Ninguém."
-            + "\nMas para chegar lá, precisa escolher o caminho correto" + "\nPara onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_narrativa);
+            + "\nMas para chegar lá, precisa escolher o caminho correto"
+            , TimeUnit.MILLISECONDS, temp_dialog);
+        System.out.println("\n");
+        enter();
+    }
+    
+    public static void PrimeiroEnredoDecisao() throws Exception{
+        Digita("Para onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_narrativa);
         do {
-            System.out.println("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção: ");
+            System.out.println("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção:\n");
             choice = scanner.nextInt();
             if (choice == 1) {
-                Digita("Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.", TimeUnit.MILLISECONDS, temp_transicao);
-                GameOver();
-                ft_enter();
+                String mensagem1 = "Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.";
+                Digita(mensagem1, TimeUnit.MILLISECONDS, temp_transicao);
+                ContinuarVoltar(mensagem1);
             }
-            if (choice == 2) {
+            else if (choice == 2) {
                 Digita("Escolha 2: Você escolheu a Ponte Travessa, e Devon conseguiu achar um atalho para chegar na Terra de Ninguém ", TimeUnit.MILLISECONDS, temp_transicao);
             } else {
-               
+               OpcaoInvalidaOuInexistente();
             }
         }while (choice < 1 || choice > 2);
     }
@@ -176,10 +187,10 @@ public class AllInOne {
             case 4:
             case 5:
                 System.out.println("\nÉ meu caro jogador, não foi dessa vez que conseguiu derrotar Hasad. Melhor voltar para o Mefisto.");
-                GameOver();
+                acertos = false;
                 break;
             default:
-                System.out.println("\nOpção inválida ou inexistente");
+                OpcaoInvalidaOuInexistente();
                 break;
         }
     }
@@ -225,31 +236,39 @@ public class AllInOne {
             case 3:
             case 4:
                 System.out.println("Resposta errada: Infelizmente não foi dessa vez que conseguiu derrotar o grande Fieremana. Melhor voltar para o Mefisto para terem uma conversa sobre.");
-                GameOver();
+                acertos = false;
                 break;
             case 5:
                 System.out.println("Parabéns jogador! Conseguiu derrotar o gigante Deus Fieremana! E agora tem 2 dos 6 Poderes Supremos dos Deuses. ");
+                ft_enter();
+                DigitaLN("NARRADOR", TimeUnit.MILLISECONDS, temp_narrativa);
+                DigitaLN("Fieremana não foi fácil para Devon, mas conseguiu derrotá-lo. Mas ainda assim, o caminho era longo, ainda temos mais 4 Deuses pela frente.", TimeUnit.MILLISECONDS, temp_narrativa);
                 break;
     	}
     }
 
-    private static void TerceiroEnredoDecisaoPósDesafio() throws Exception{
-        DigitaLN("NARRADOR", TimeUnit.MILLISECONDS, temp_narrativa);
-        DigitaLN("Fieremana não foi fácil para Devon, mas conseguiu derrotá-lo. Mas ainda assim, o caminho era longo, ainda temos mais 4 Deuses pela frente.", TimeUnit.MILLISECONDS, temp_narrativa);
+    private static void ft_enter() {
+        System.out.println("Aperte \"Enter\":");
+        scanner.nextLine();
+        scanner.nextLine();
+    }
+
+    public static void TerceiroEnredoDecisaoPósDesafio() throws Exception{
         DigitaLN("Havia dois caminhos para seguir, mas qual o certo?", TimeUnit.MILLISECONDS, temp_narrativa);
-        DigitaLN("\n1.Ir pelo caminho da Floresta Negra", TimeUnit.MILLISECONDS, temp_narrativa);
-        DigitaLN("\n2.2.Seguir para um caminho desconhecido", TimeUnit.MILLISECONDS, temp_narrativa);
+        DigitaLN("\n1. Ir pelo caminho da Floresta Negra", TimeUnit.MILLISECONDS, temp_narrativa);
+        DigitaLN("\n2. Seguir para um caminho desconhecido", TimeUnit.MILLISECONDS, temp_narrativa);
         choice = scanner.nextInt();
         do
         {
             if(choice == 1){
                 DigitaLN("\nEscolha 1: Ainda bem! Escolheu o melhor caminho para chegar ao seu próximo Deus.", TimeUnit.MILLISECONDS, temp_transicao);
             }
-            if(choice == 2){
-                DigitaLN("\nEscolheu 2: Tem o nome de Caminho Desconhecido por um motivo, volte para o começo.", TimeUnit.MILLISECONDS, temp_transicao);
-                GameOver();
+            else if(choice == 2){
+                String mensagem = "\nEscolheu 2: Tem o nome de Caminho Desconhecido por um motivo, volte para o começo.";
+                DigitaLN(mensagem, TimeUnit.MILLISECONDS, temp_transicao);
+                ContinuarVoltar(mensagem);
             }else{
-                DigitaLN("Opção inválida ou inexistente!", TimeUnit.MILLISECONDS, temp_dialog);
+                OpcaoInvalidaOuInexistente();
             }
         }while(choice < 1 || choice > 2);
     }
@@ -295,13 +314,13 @@ public class AllInOne {
             case 4:
             case 5:
                 System.out.println("Deusa Egoyis era mais poderosa do que você pensou. Melhor voltar para o Mefisto para terem uma conversa sobre.");
-                GameOver();
+                acertos = false;
                 break;
             case 3:
                 System.out.println("Parabéns, Devon! Conseguiu derrotar um dos maiores deuses. Agora tem 3 dos 6 Poderes Supremos dos Deuses. ");
                 break;
             default:
-                System.out.println("\nOpção inválida ou inexistente");
+                OpcaoInvalidaOuInexistente();
                 break;
         }
     }
@@ -312,7 +331,7 @@ public class AllInOne {
         TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
-    private static void QuartoEnredoDecisao() throws Exception{
+    static void QuartoEnredoDecisao() throws Exception{
         DigitaLN("\n-------------------------------DESCANSO DE DEVON------------------------------------",TimeUnit.MILLISECONDS, temp_transicao);
         System.out.println("\n");
         
@@ -323,12 +342,12 @@ public class AllInOne {
         do
         {
             if(choice == 1){
-                DigitaLN("\nZzz...\n", TimeUnit.MILLISECONDS, temp_dialog);
-                QuartoEnredoDecisao();
+                String mensagem = "\nZzz...\n";
+                DigitaLN(mensagem, TimeUnit.MILLISECONDS, temp_dialog);
+                ContinuarVoltar(mensagem);
             }
-            if(choice == 2){
+            else if(choice == 2){
                 DigitaLN("\nACORDAR DEVON...", TimeUnit.MILLISECONDS, temp_dialog);
-                
             }else{
                 OpcaoInvalidaOuInexistente();
             }
@@ -379,7 +398,7 @@ public class AllInOne {
             case 4:
             case 5:
                 System.out.println("\nDeusa Lust te pegou de jeito. Melhor voltar para o Mefisto para terem uma conversa sobre essa última batalha.");
-                GameOver();
+                acertos = false;
                 break;
             case 3:
                 System.out.println("\nConseguiu derrotar a Deusa das Deusas! E agora tem 4 dos 6 Poderes Supremos dos Deuses. Você está quase lá.");
@@ -440,7 +459,7 @@ public class AllInOne {
     	case 4:
     	case 5:
     		System.out.println("Krieg te pegou de jeito, Devon. Volte para o começo e fale com Mefisto.");
-    		GameOver();
+    		acertos = false;
             break;
         default:
             OpcaoInvalidaOuInexistente();
@@ -509,7 +528,7 @@ public class AllInOne {
             case 3:
                 System.out.println(
                         "Resposta errada: Shi te enganou e você foi pego pela escuridão dela. Volte e fale com Mefisto.");
-                GameOver();
+                acertos = false;
                 break;
             case 4:
                 System.out.println(
@@ -518,7 +537,10 @@ public class AllInOne {
             case 5:
                 System.out.println(
                         "Resposta errada: Shi te enganou e você foi pego pela escuridão dela. Volte e fale com Mefisto.");
-                GameOver();
+                acertos = false;
+                break;
+            default:
+                OpcaoInvalidaOuInexistente();
                 break;
 		}
     }
@@ -548,27 +570,31 @@ public class AllInOne {
         TimeUnit.MILLISECONDS, temp_dialog);
     }
 
-    private static void GameOver() throws InterruptedException {
+    public static void ContinuarVoltar(String mensagem) throws Exception {
         /*
-        função destinada a recomeçar o jogo;
+        função destinada a decisões sem saída
         */
         int escolha = 0;
         do
         {
-            Digita("\n\n1 - Continuar\n2 - Voltar\n\nDigite sua opção: ", TimeUnit.MILLISECONDS, temp_transicao);
+            Digita("\n\n1 - Continuar\n2 - Voltar\n\nDigite sua opção:\n", TimeUnit.MILLISECONDS, temp_transicao);
             escolha = scanner.nextInt();
             if(escolha == 1){
-                acertos = false;
-                System.out.println("\n");
-                System.out.println("\nVoce esta em queda permanante.");
-                System.out.println("\n\n\n                    Game Over.");
-            
-            }
-            if (escolha == 2){
-                System.exit(0);
-            }
-            else if(escolha != 1 || escolha != 2){
-                
+                Digita(mensagem, TimeUnit.MILLISECONDS, temp_transicao);
+                ContinuarVoltar(mensagem);
+            }else if(escolha == 2){
+                if(Contexto_ContinuarVoltar == 1){
+                    PrimeiroEnredoDecisao();
+                }
+                if(Contexto_ContinuarVoltar == 2){
+                    TerceiroEnredoDecisaoPósDesafio();
+                }
+                if(Contexto_ContinuarVoltar == 3){
+                    QuartoEnredoDecisao();
+                }
+                return;
+            }else{
+                OpcaoInvalidaOuInexistente();
             }
         }while(escolha < 1 || escolha > 2);
     }
@@ -577,8 +603,14 @@ public class AllInOne {
     System.out.println("\n>>Aperte \"Enter\" para seguir");
     scanner.nextLine();
 }
-    private static void ft_enter() throws Exception {
+    private static void ft_enter_comeca_jogo() throws Exception {
         System.out.println("\n>>Aperte \"Enter\" para começar o jogo");
+        scanner.nextLine();
+        scanner.nextLine();
+    }
+
+    private static void ft_enter_menu() throws Exception {
+        System.out.println("\n>>Aperte \"Enter\" para mostrar o MENU novamente");
         scanner.nextLine();
         scanner.nextLine();
     }
@@ -596,7 +628,6 @@ public class AllInOne {
         "\n** • Vinicius Gomes                                                                                                           **\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("**                                              Obrigado a todos                                                              **\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("********************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_dialog);
-        System.out.print("\n>> Pressione \"Enter\" para mostrar o MENU novamente:");
     }
 
     private static void Instrucoes() throws InterruptedException {
@@ -605,7 +636,6 @@ public class AllInOne {
         Digita("Os desafios são compostos por 6 desafios e 5 alternativas: (A, B, C, D, E) onde serão testados seus conhecimentos referente a matéria de matematica;\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("Para selecionar as respostas, você deve digitar a letra correspodente a alternativa que considera correta;\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("Não há chances para erro. Caso erre qualquer questão, o jogo será reiniciado.\n", TimeUnit.MILLISECONDS, temp_dialog);
-        System.out.print("\n>> Pressione\" Enter\" para mostrar o MENU novamente ");
     }
 
     public static void Digita(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
@@ -627,6 +657,8 @@ public class AllInOne {
     }
 
     public static void OpcaoInvalidaOuInexistente() throws Exception{
-        DigitaLN("Opção inválida ou inexistente!", TimeUnit.MILLISECONDS, temp_dialog);
+        DigitaLN("Opção inválida ou inexistente! \n>> Aperte \"Enter\" ", TimeUnit.MILLISECONDS, temp_dialog);
+        scanner.nextLine();
+        scanner.nextLine();
     }
 }
