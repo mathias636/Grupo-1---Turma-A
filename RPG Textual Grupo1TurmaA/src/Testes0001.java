@@ -11,7 +11,7 @@ public class Testes0001 {
         {
             System.out.println("1 - testesContinuarVoltar");
             System.out.println("2 - funcaoEmbaralhar");
-            System.out.println("3 - ***************");
+            System.out.println("3 - Desafios");
 
             escolha = scanner.nextInt();
 
