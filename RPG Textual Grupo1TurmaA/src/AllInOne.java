@@ -1,4 +1,6 @@
-﻿import java.util.Scanner;
+﻿import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class AllInOne {
@@ -15,7 +17,7 @@ public class AllInOne {
     public static int Contexto_ContinuarVoltar;
     public static boolean acertos;
     public static Scanner scanner = new Scanner(System.in);
-    public static int choice;
+    public static int escolha;
     /*
     MAIN ABAIXO
     */
@@ -136,18 +138,18 @@ public class AllInOne {
         Digita("Para onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_narrativa);
         do {
             System.out.println("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção:\n");
-            choice = scanner.nextInt();
-            if (choice == 1) {
+            escolha = scanner.nextInt();
+            if (escolha == 1) {
                 String mensagem1 = "Escolha 1: Você escolheu as Montanhas do Amanhã, e infelizmente elas te levaram para um buraco sem fundo.";
                 Digita(mensagem1, TimeUnit.MILLISECONDS, temp_transicao);
                 ContinuarVoltar(mensagem1);
             }
-            else if (choice == 2) {
+            else if (escolha == 2) {
                 Digita("Escolha 2: Você escolheu a Ponte Travessa, e Devon conseguiu achar um atalho para chegar na Terra de Ninguém ", TimeUnit.MILLISECONDS, temp_transicao);
             } else {
                OpcaoInvalidaOuInexistente();
             }
-        }while (choice < 1 || choice > 2);
+        }while (escolha < 1 || escolha > 2);
     }
 
     private static void SegundoEnredo() throws Exception{
@@ -163,36 +165,23 @@ public class AllInOne {
                 " \nVOCÊ FOI AVISADO, SEU TOLO.",TimeUnit.MILLISECONDS, temp_dialog);
     }
 
-    private static void Desafio1() throws Exception{
-        int escolha;
+    private static String Desafio1() throws Exception{
         Digita ("\n\nNARRADOR:", TimeUnit.MILLISECONDS, temp_narrativa);
         Digita ("\nE começa a luta entre Devon e Hasad, Deus Metamorfo.", TimeUnit.MILLISECONDS, temp_narrativa);
         Digita ("\nOs poderes de Hasad são impressionantes, já que ele pode se transformar em qualquer ser vivo e até objetos.", TimeUnit.MILLISECONDS, temp_narrativa);
         Digita ("\nDevon percebe que não será fácil e precisa usar mais de seus poderes para conseguir derrotar Hasad." + "\nPara isso precisará responder: ", TimeUnit.MILLISECONDS, temp_narrativa);
-        System.out.println("\nQual das alternativas abaixo corresponde a 4D2 em base hexadecimal para base decimal.");
-        System.out.println("1. 1234");
-        System.out.println("2. 4321");
-        System.out.println("3. 3241");
-        System.out.println("4. 4213");
-        System.out.println("5. 1342");
-        System.out.println("\nFaça sua escolha:");
-        escolha = scanner.nextInt();
-        switch (escolha)
+        String questao = "\nQual das alternativas abaixo corresponde para 4D2 em base hexadecimal para base decimal?";
+        String alternativas[] = {"1234", "4321", "3241", "4213", "1342"};
+        String resposta = alternativas[0]; //"1234 é a resposta"
+        funcaoEmbaralhar(questao, alternativas, resposta);
+        if(acertos == true)
         {
-            case 1:
             Digita ("\nNARRADOR: \nE Devon consegue vencer Hasad! E agora tem 1 dos 6 Poderes Supremos dos Deuses. Meus parabéns, jogador.", TimeUnit.MILLISECONDS, temp_narrativa);
-                break;
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                System.out.println("\nÉ meu caro jogador, não foi dessa vez que conseguiu derrotar Hasad. Melhor voltar para o Mefisto.");
-                acertos = false;
-                break;
-            default:
-                OpcaoInvalidaOuInexistente();
-                break;
+        }else{
+            System.out.println("\nÉ meu caro jogador, não foi dessa vez que conseguiu derrotar Hasad. Melhor voltar para o Mefisto.");
+            ft_enter();
         }
+        return resposta;
     }
     
     private static void TerceiroEnredo() throws Exception{
@@ -219,32 +208,19 @@ public class AllInOne {
         TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
-    private static void Desafio2() throws Exception{
-        int resposta;
-    	System.out.println("Qual das alternativas corresponde 651 em base decimal para base octal? ");
-    	System.out.println("1. 2234");
-    	System.out.println("2. 1132");
-    	System.out.println("3. 1211");
-    	System.out.println("4. 1231");
-    	System.out.println("5. 1213");
-    	resposta = scanner.nextInt();
-    	
-    	switch (resposta) 
-    	{
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-                System.out.println("Resposta errada: Infelizmente não foi dessa vez que conseguiu derrotar o grande Fieremana. Melhor voltar para o Mefisto para terem uma conversa sobre.");
-                acertos = false;
-                break;
-            case 5:
-                System.out.println("Parabéns jogador! Conseguiu derrotar o gigante Deus Fieremana! E agora tem 2 dos 6 Poderes Supremos dos Deuses. ");
-                ft_enter();
-                DigitaLN("NARRADOR", TimeUnit.MILLISECONDS, temp_narrativa);
-                DigitaLN("Fieremana não foi fácil para Devon, mas conseguiu derrotá-lo. Mas ainda assim, o caminho era longo, ainda temos mais 4 Deuses pela frente.", TimeUnit.MILLISECONDS, temp_narrativa);
-                break;
-    	}
+    private static String Desafio2() throws Exception{
+        String questao = "Qual das alternativas corresponde 651 em base decimal para base octal? ";
+        String alternativas[] = {"2234", "1132", "1211", "1231", "1213"};
+        String resposta = alternativas[4]; // "1213";
+        funcaoEmbaralhar(questao, alternativas, resposta);
+        if(acertos == true)
+        {
+            System.out.println("Parabéns jogador! Conseguiu derrotar o gigante Deus Fieremana! E agora tem 2 dos 6 Poderes Supremos dos Deuses. ");
+        }else{
+            System.out.println("Resposta errada: Infelizmente não foi dessa vez que conseguiu derrotar o grande Fieremana. Melhor voltar para o Mefisto para terem uma conversa sobre.");
+            ft_enter();
+        }
+        return resposta;
     }
 
     private static void ft_enter() {
@@ -257,20 +233,20 @@ public class AllInOne {
         DigitaLN("Havia dois caminhos para seguir, mas qual o certo?", TimeUnit.MILLISECONDS, temp_narrativa);
         DigitaLN("\n1. Ir pelo caminho da Floresta Negra", TimeUnit.MILLISECONDS, temp_narrativa);
         DigitaLN("\n2. Seguir para um caminho desconhecido", TimeUnit.MILLISECONDS, temp_narrativa);
-        choice = scanner.nextInt();
+        escolha = scanner.nextInt();
         do
         {
-            if(choice == 1){
+            if(escolha == 1){
                 DigitaLN("\nEscolha 1: Ainda bem! Escolheu o melhor caminho para chegar ao seu próximo Deus.", TimeUnit.MILLISECONDS, temp_transicao);
             }
-            else if(choice == 2){
+            else if(escolha == 2){
                 String mensagem = "\nEscolheu 2: Tem o nome de Caminho Desconhecido por um motivo, volte para o começo.";
                 DigitaLN(mensagem, TimeUnit.MILLISECONDS, temp_transicao);
                 ContinuarVoltar(mensagem);
             }else{
                 OpcaoInvalidaOuInexistente();
             }
-        }while(choice < 1 || choice > 2);
+        }while(escolha < 1 || escolha > 2);
     }
 
     private static void TerceiroEnredoFinal() throws Exception{
@@ -296,33 +272,19 @@ public class AllInOne {
         enter();
     }
 
-    private static void Desafio3() throws Exception{
-    
-        int resposta;
-        System.out.println("Para derrotar Egoyis responda, simplifique o radical raiz quadrada de 27 e selecione a opção correta");
-        System.out.println("1. raiz quadrada de 3");
-        System.out.println("2. 2 raiz quadrada de 3");
-        System.out.println("3. 3 raiz quadrada de 3");
-        System.out.println("4. 3 raiz quadrada de 2");
-        System.out.println("5. 2 raiz quadrada de 2");
-        resposta = scanner.nextInt();
-        switch (resposta) 
+    private static String Desafio3() throws Exception{
+        String questao = "Para derrotar Egoyis responda, simplifique o radical raiz quadrada de 27 e selecione a opção correta";
+        String alternativas[] = {"raiz quadrada de 3", "2 raiz quadrada de 3", "3 raiz quadrada de 3", "3 raiz quadrada de 2", "2 raiz quadrada de 2"};
+        String resposta = alternativas[2]; //3 raiz quadrada de 3
+        funcaoEmbaralhar(questao, alternativas, resposta);
+        if(acertos == true)
         {
-            
-            case 1:
-            case 2:
-            case 4:
-            case 5:
-                System.out.println("Deusa Egoyis era mais poderosa do que você pensou. Melhor voltar para o Mefisto para terem uma conversa sobre.");
-                acertos = false;
-                break;
-            case 3:
-                System.out.println("Parabéns, Devon! Conseguiu derrotar um dos maiores deuses. Agora tem 3 dos 6 Poderes Supremos dos Deuses. ");
-                break;
-            default:
-                OpcaoInvalidaOuInexistente();
-                break;
+            System.out.println("Parabéns, Devon! Conseguiu derrotar um dos maiores deuses. Agora tem 3 dos 6 Poderes Supremos dos Deuses. ");
+        }else{
+            System.out.println("Deusa Egoyis era mais poderosa do que você pensou. Melhor voltar para o Mefisto para terem uma conversa sobre.");
+            ft_enter();
         }
+        return resposta;
     }
 
     private static void QuartoEnredoFinal() throws Exception{
@@ -338,20 +300,20 @@ public class AllInOne {
         DigitaLN("ESCOLHA O QUE DEVON DEVE FAZER.",TimeUnit.MILLISECONDS,temp_transicao);
         DigitaLN("\n1. Deixar Devon descansar mais um pouco para que não tenha mais que descansar depois.",TimeUnit.MILLISECONDS,temp_transicao);
         DigitaLN("\n2. Acordar Devon para chegar na casa de Lust.",TimeUnit.MILLISECONDS,temp_transicao);
-        choice = scanner.nextInt();
+        escolha = scanner.nextInt();
         do
         {
-            if(choice == 1){
+            if(escolha == 1){
                 String mensagem = "\nZzz...\n";
                 DigitaLN(mensagem, TimeUnit.MILLISECONDS, temp_dialog);
                 ContinuarVoltar(mensagem);
             }
-            else if(choice == 2){
+            else if(escolha == 2){
                 DigitaLN("\nACORDAR DEVON...", TimeUnit.MILLISECONDS, temp_dialog);
             }else{
                 OpcaoInvalidaOuInexistente();
             }
-        }while(choice < 1 || choice > 2);
+        }while(escolha < 1 || escolha > 2);
 
     }
 
@@ -380,33 +342,21 @@ public class AllInOne {
         enter();
     }
 
-    private static void Desafio4() throws Exception{
+    private static String Desafio4() throws Exception{
         System.out.println("\nDeusa Lust não esperava que Devon conseguisse chegar tão longe, ao ponto de derrubá-la.\n"
                 + "E para finalizar, resolva o desafio:");
-        System.out.println("\nDesenvolva a equação de primeiro grau 4x - 8 = 6 + 2x para finalizar a Deusa Lust.");
-        System.out.println("1. 8");
-        System.out.println("2. 5");
-        System.out.println("3. 7");
-        System.out.println("4. 9");
-        System.out.println("5. 6");
-        int escolha;
-        System.out.println("\nFaça sua escolha:");
-        escolha = scanner.nextInt();
-        switch (escolha) {
-            case 1:
-            case 2:
-            case 4:
-            case 5:
-                System.out.println("\nDeusa Lust te pegou de jeito. Melhor voltar para o Mefisto para terem uma conversa sobre essa última batalha.");
-                acertos = false;
-                break;
-            case 3:
-                System.out.println("\nConseguiu derrotar a Deusa das Deusas! E agora tem 4 dos 6 Poderes Supremos dos Deuses. Você está quase lá.");
-                break;
-            default:
-                OpcaoInvalidaOuInexistente();
-                break;
-            }
+        String questao = "\nDesenvolva a equação de primeiro grau 4x - 8 = 6 + 2x para finalizar a Deusa Lust.";
+        String alternativas[] = {"8", "5", "7", "9", "6"};
+        String resposta = alternativas[2]; // 7
+        funcaoEmbaralhar(questao, alternativas, resposta);
+        if (acertos == false)
+        {
+            System.out.println("\nDeusa Lust te pegou de jeito. Melhor voltar para o Mefisto para terem uma conversa sobre essa última batalha.");
+        }else{
+            System.out.println("\nConseguiu derrotar a Deusa das Deusas! E agora tem 4 dos 6 Poderes Supremos dos Deuses. Você está quase lá.");
+            ft_enter();
+        }
+        return resposta;
     }
 
     private static void QuintoEnredoFinal() throws Exception{
@@ -435,37 +385,19 @@ public class AllInOne {
             TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
-    private static void Desafio5() throws Exception{
-        int resposta;
-    	
-    	System.out.println("Resolva o desafio 23x - 16 = 14 - 17x e derrote Krieg de uma vez por todas");
-    	System.out.println("1. 4/5");
-    	System.out.println("2. 3/4");
-    	System.out.println("3. 2/3");
-    	System.out.println("4. 1/2");
-    	System.out.println("5. 4/3");
-    	resposta = scanner.nextInt();
-    	
-    	switch (resposta) 
-    	{
-    	
-    	case 1:
-    		System.out.println("Krieg te pegou de jeito, Devon. Volte para o começo e fale com Mefisto.");
-    		break;
-    	case 2:
-    		System.out.println("Krieg se deu mal mesmo. Muito bem, jogador! Agora tem 5 dos 6 Poderes Supremos dos Deuses. Você está cada vez mais próximo.");
-            break;
-    	case 3:
-    	case 4:
-    	case 5:
-    		System.out.println("Krieg te pegou de jeito, Devon. Volte para o começo e fale com Mefisto.");
-    		acertos = false;
-            break;
-        default:
-            OpcaoInvalidaOuInexistente();
-            break;
-    	}
-    	
+    private static String Desafio5() throws Exception{
+        String questao = "Resolva o desafio 23x - 16 = 14 - 17x e derrote Krieg de uma vez por todas";
+        String alternativas[] = {"4/5", "3/4", "2/3", "1/2", "4/3"};
+        String resposta = alternativas[1]; // "3/4"
+        funcaoEmbaralhar(questao, alternativas, resposta);
+        if(acertos == false)
+        {
+            System.out.println("Krieg te pegou de jeito, Devon. Volte para o começo e fale com Mefisto.");
+        }else{
+            System.out.println("Krieg se deu mal mesmo. Muito bem, jogador! Agora tem 5 dos 6 Poderes Supremos dos Deuses. Você está cada vez mais próximo.");
+            ft_enter();
+        }
+        return resposta;
     }
 
     private static void SetimoEnredo() throws Exception{
@@ -512,37 +444,21 @@ public class AllInOne {
             TimeUnit.MILLISECONDS, temp_dialog);
     }
 
-    private static void Desafio6() throws Exception{
-        int resposta;
-		System.out.println("Para esse último desafio, responda, 10y - 5(1 + y) = 3(2y - 2) - 20.");
-		System.out.println("1. 20");
-		System.out.println("2. 18");
-		System.out.println("3. 19");
-		System.out.println("4. 21");
-		System.out.println("5. 16");
-		resposta = scanner.nextInt();
-		switch (resposta) 
+    private static String Desafio6() throws Exception{
+        String questao = "Para esse último desafio, responda, 10y - 5(1 + y) = 3(2y - 2) - 20.";
+        String alternativas[] = {"20", "18", "19", "21", "16"};
+        String resposta = alternativas[3]; //21
+        funcaoEmbaralhar(questao, alternativas, resposta);
+        if(acertos == false)
         {
-            case 1:
-            case 2:
-            case 3:
-                System.out.println(
-                        "Resposta errada: Shi te enganou e você foi pego pela escuridão dela. Volte e fale com Mefisto.");
-                acertos = false;
-                break;
-            case 4:
-                System.out.println(
-                        "Devon, VOCÊ CONSEGUIU!! CONQUISTOU TODOS OS 6 PODERES SUPREMOS DOS DEUSES. Agora cumpra seu destino.");
-                break;
-            case 5:
-                System.out.println(
-                        "Resposta errada: Shi te enganou e você foi pego pela escuridão dela. Volte e fale com Mefisto.");
-                acertos = false;
-                break;
-            default:
-                OpcaoInvalidaOuInexistente();
-                break;
-		}
+            System.out.println(
+                "Resposta errada: Shi te enganou e você foi pego pela escuridão dela. Volte e fale com Mefisto.");
+        }else{
+            System.out.println(
+                "Devon, VOCÊ CONSEGUIU!! CONQUISTOU TODOS OS 6 PODERES SUPREMOS DOS DEUSES.Agora cumpra seu destino.");
+            ft_enter();
+        }
+        return resposta;
     }
 
     private static void SetimoEnredoFinal() throws Exception{
@@ -633,7 +549,7 @@ public class AllInOne {
     private static void Instrucoes() throws InterruptedException {
         System.out.println("==================================================================================================================================================\n");
         Digita("Devon é um jogo de perguntas e respostas, onde o jogador enfrenta desafios para progredir na historia;\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita("Os desafios são compostos por 6 desafios e 5 alternativas: (A, B, C, D, E) onde serão testados seus conhecimentos referente a matéria de matematica;\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Digita("Os desafios são compostos por 6 desafios e 5 alternativas: (1, 2, 3, 4, 5) onde serão testados seus conhecimentos referente a matéria de matematica;\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("Para selecionar as respostas, você deve digitar a letra correspodente a alternativa que considera correta;\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("Não há chances para erro. Caso erre qualquer questão, o jogo será reiniciado.\n", TimeUnit.MILLISECONDS, temp_dialog);
     }
@@ -660,5 +576,52 @@ public class AllInOne {
         DigitaLN("Opção inválida ou inexistente! \n>> Aperte \"Enter\" ", TimeUnit.MILLISECONDS, temp_dialog);
         scanner.nextLine();
         scanner.nextLine();
+    }
+
+    static boolean funcaoEmbaralhar(String questao, String alternativas[], String resposta) throws Exception {
+        boolean result  = false; //variável para dar retorno ao teste
+        int letter[] = {1, 2, 3, 4, 5}; //escolha das alternativas
+        ArrayList<String> opcoes = new ArrayList<String>();
+        int escolha_certa = 0; //variável para salvar a alternativa certa após embaralhar
+
+        //adicionando conteúdo das alternativas para embaralhar      
+        for(int i = 0; i < alternativas.length; i++){
+            opcoes.add(alternativas[i]);
+        }
+        //embaralhando as alternativas
+        Collections.shuffle(opcoes);
+        //imprimindo as alternativas embaralhadas e verificando a escolha do usuário
+        do
+        {
+            System.out.print("\n"+questao+"\n");
+            for(int i = 0; i < alternativas.length; i++){
+                System.out.println(letter[i]+". "+opcoes.get(i)); //imprime "letter" + alternativa
+                if(opcoes.get(i).equals(resposta)){
+                    escolha_certa = letter[i];} //salva a escolha certa 
+            }
+            ft_verifica_escolha(escolha_certa);
+        }while(escolha < 1 || escolha > 5);
+        return result;
+    }
+
+    private static void ft_verifica_escolha(int escolha_certa) throws Exception {
+        Digita("\nDigite sua opção/escolha: ", TimeUnit.MILLISECONDS, temp_dialog);
+        escolha = scanner.nextInt();
+        switch(escolha)
+        {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                if(escolha == escolha_certa){
+                    acertos = true;}
+                else{
+                    acertos = false;}
+                break;
+            default:
+                OpcaoInvalidaOuInexistente();
+                break;
+        }
     }
 }
