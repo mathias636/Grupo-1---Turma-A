@@ -2,19 +2,17 @@
 
 public class Testes0001 {
 
-    
+    static Scanner scanner = new Scanner(System.in);
+    static int escolha = 0;
+
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        int escolha = 0;
         System.out.println("Escolha um teste\n");
         do
         {
             System.out.println("1 - testesContinuarVoltar");
             System.out.println("2 - funcaoEmbaralhar");
             System.out.println("3 - Desafios");
-
             escolha = scanner.nextInt();
-
             switch(escolha)
             {
                 case 1:
@@ -32,23 +30,38 @@ public class Testes0001 {
         scanner.close();
     }
     private static void Desafios() throws Exception {
-        System.out.println("\n-------DESAFIO 1-DESAFIO 1-DESAFIO 1-DESAFIO 1-DESAFIO 1-DESAFIO 1-DESAFIO 1------------------------------------------------ DESAFIO 1 ---\n");
-        AllInOne.Desafio1();
-        System.out.println("\n-------DESAFIO 2-DESAFIO 2-DESAFIO 2-DESAFIO 2-DESAFIO 2-DESAFIO 2-DESAFIO 2------------------------------------------------ DESAFIO 2 ---\n");
-        AllInOne.Desafio2();
-        System.out.println("\nA resposta é: "+AllInOne.Desafio2());
-        System.out.println("\n-------DESAFIO 3-DESAFIO 3-DESAFIO 3-DESAFIO 3-DESAFIO 3-DESAFIO 3-DESAFIO 3------------------------------------------------ DESAFIO 3 ---\n");
-        AllInOne.Desafio3();
-        System.out.println("\nA resposta é: "+AllInOne.Desafio3());
-        System.out.println("\n-------DESAFIO 4-DESAFIO 4-DESAFIO 4-DESAFIO 4-DESAFIO 4-DESAFIO 4-DESAFIO 4------------------------------------------------ DESAFIO 4 ---\n");
-        AllInOne.Desafio4();
-        System.out.println("\nA resposta é: "+AllInOne.Desafio4());
-        System.out.println("\n-------DESAFIO 5-DESAFIO 5-DESAFIO 5-DESAFIO 5-DESAFIO 5-DESAFIO 5-DESAFIO 5------------------------------------------------ DESAFIO 5 ---\n");
-        AllInOne.Desafio5();
-        System.out.println("\nA resposta é: "+AllInOne.Desafio5());
-        System.out.println("\n-------DESAFIO 6-DESAFIO 6-DESAFIO 6-DESAFIO 6-DESAFIO 6-DESAFIO 6-DESAFIO 6------------------------------------------------ DESAFIO 6 ---\n");
-        AllInOne.Desafio6();
-        System.out.println("\nA resposta é: "+AllInOne.Desafio6());
+        escolha = 0;
+        System.out.println("escolha um desafio\n");
+        System.out.println("1 - DEAFIO 1");
+        System.out.println("2 - DEAFIO 2");
+        System.out.println("3 - DEAFIO 3");
+        System.out.println("4 - DEAFIO 4");
+        System.out.println("5 - DEAFIO 5");
+        System.out.println("6 - DEAFIO 6");
+        escolha = scanner.nextInt();
+        switch(escolha)
+        {
+            case 1:
+                System.out.println("\nDESAFIO 1 | RESPOSTA: 1234");
+                AllInOne.Desafio1();
+            case 2:
+                System.out.println("\nDESAFIO 2 | RESPOSTA: 1213");
+                AllInOne.Desafio2();
+            case 3:
+                System.out.println("\nDESAFIO 3 | RESPOSTA: 3 raiz quadrada de 3");
+                AllInOne.Desafio3();
+            case 4:
+                System.out.println("\nDESAFIO 4 | RESPOSTA: 7");
+                AllInOne.Desafio4();
+            case 5:
+                System.out.println("\nDESAFIO 5 | RESPOSTA: 3/4");
+                AllInOne.Desafio5();
+            case 6:
+                System.out.println("\nDESAFIO 6 | RESPOSTA: 21");
+                AllInOne.Desafio6();
+            default:
+                Desafios();
+        }
     }
     private static void funcaoEmbaralhar() throws Exception {
         boolean result;
