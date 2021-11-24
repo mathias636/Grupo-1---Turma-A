@@ -9,7 +9,7 @@ public class AllInOne {
     ORIGINAL:
     public static final int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
     */
-    public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
+    public static int temp_dialog = 1, temp_narrativa = 2, temp_transicao = 0;
     public static long tempo_mensagem = 0;
     /*
     abaixo, variáveis para condicionais do Jogo(), scanner,  e ContinuarVoltar(); 
@@ -129,13 +129,13 @@ public class AllInOne {
         Digita("\nNARRADOR: \nE começa a jornada de DEVON."
             + "\nSeu primeiro Deus é Hasada, que mora em Terra de Ninguém."
             + "\nMas para chegar lá, precisa escolher o caminho correto"
-            , TimeUnit.MILLISECONDS, temp_dialog);
+            , TimeUnit.MILLISECONDS, temp_narrativa);
         System.out.println("\n");
         enter();
     }
     
     public static void PrimeiroEnredoDecisao() throws Exception{
-        Digita("Para onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_narrativa);
+        Digita("Para onde Devon deve ir?",TimeUnit.MILLISECONDS, temp_transicao);
         do {
             System.out.println("\n\n1. Montanhas do Amanhã\n2. Ponte Travessa\n\nDigite sua opção:\n");
             escolha = scanner.nextInt();
@@ -167,9 +167,10 @@ public class AllInOne {
 
     static String Desafio1() throws Exception{
         Digita ("\n\nNARRADOR:", TimeUnit.MILLISECONDS, temp_narrativa);
-        Digita ("\nE começa a luta entre Devon e Hasad, Deus Metamorfo.", TimeUnit.MILLISECONDS, temp_narrativa);
-        Digita ("\nOs poderes de Hasad são impressionantes, já que ele pode se transformar em qualquer ser vivo e até objetos.", TimeUnit.MILLISECONDS, temp_narrativa);
-        Digita ("\nDevon percebe que não será fácil e precisa usar mais de seus poderes para conseguir derrotar Hasad." + "\nPara isso precisará responder: ", TimeUnit.MILLISECONDS, temp_narrativa);
+        Digita ("\nE começa a luta entre Devon e Hasad, Deus Metamorfo." + 
+        "\nOs poderes de Hasad são impressionantes, já que ele pode se transformar em qualquer ser." + 
+        "\nDevon percebe que não será fácil e precisa usar mais de seus poderes para conseguir derrotar Hasad." + 
+        "\nPara isso precisará responder: ", TimeUnit.MILLISECONDS, temp_narrativa);
         String questao = "\nQual das alternativas abaixo corresponde para 4D2 em base hexadecimal para base decimal?";
         String alternativas[] = {"1234", "4321", "3241", "4213", "1342"};
         String resposta = alternativas[0]; //"1234 é a resposta"
@@ -178,7 +179,7 @@ public class AllInOne {
         {
             Digita ("\nNARRADOR: \nE Devon consegue vencer Hasad! E agora tem 1 dos 6 Poderes Supremos dos Deuses. Meus parabéns, jogador.", TimeUnit.MILLISECONDS, temp_narrativa);
         }else{
-            System.out.println("\nÉ meu caro jogador, não foi dessa vez que conseguiu derrotar Hasad. Melhor voltar para o Mefisto.");
+            Digita("\nÉ meu caro jogador, não foi dessa vez que conseguiu derrotar Hasad. Melhor voltar para o Mefisto.",TimeUnit.MILLISECONDS, temp_narrativa);
             ft_enter();
         }
         return resposta;
@@ -186,9 +187,9 @@ public class AllInOne {
     
     private static void TerceiroEnredo() throws Exception{
         Digita("\nDEVON: \nEU CONSEGUI!! EU VENCIIII!" + "\nDEUS HASAD: Você...não sabe...o que está fazendo...garoto!", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita("\n\nNARRADOR: \nE assim, Devon segue para o próximo Deus, o GRANDE Fieremana."
-        + "\nFieremana é um Deus devorador, ou seja, ele basicamente come tudo o que deseja."
-        + "\nNão será fácil para nosso Devon."
+        Digita("\n\nNARRADOR: \nE assim, Devon segue para o próximo Deus, o 'GRANDE' Fierman, um deus Anão."
+        + "\nFieremana é um Deus devorador(conquistador), ou seja, ele basicamente consegue tudo o que deseja."
+        + "\nNão será fácil para Devon."
         + "\nApós a grande luta com Hasad, Devon parou um pouco no caminho para recarregar suas energias para sua próxima batalha, e terá um longo caminho para chegar no Deus Fieremana.", TimeUnit.MILLISECONDS, temp_narrativa);
         System.out.println("\n");
         enter();
@@ -196,15 +197,18 @@ public class AllInOne {
         System.out.println("\n");
         enter();
         Digita("Narrador: \nApós seu descanso, Devon seguiu em frente e finalmente chegou na casa do Deus Fieremana.", TimeUnit.MILLISECONDS, temp_narrativa);
-        Digita("\n\nDEUS FIEREMANA: \nQUEM OUSA ENTRAR EM MINHA CASA??"
-        + "\nDEVON: \nOlá, Fieremana, sou Devon e estou aqui para basicamente te derrotar e pegar seus poderes."
-        + "\nDEUS FIEREMANA: \nVOCÊ ME FAZ RIR, SEU NANICO. JÁ VIU MEU TAMANHO? COMO ACHA QUE VAI CONSEGUIR ME DERROTAR? NÃO ME FAÇA RIR."
-        + "\nDEVON: \nESTOU PRONTO, FIEREMANA",TimeUnit.MILLISECONDS, temp_dialog);
+        System.out.println("\n Devon abriu a porta e gritou!!");
+        Digita("\nDevon: \nONDE ESTA FIERMAN, VIM ACABAR COM SUA RAÇA" 
+        + "\n\nDEUS Fierman: \nQUEM OUSA ENTRAR EM MINHA CASA??"
+        + "\nDEVON: \nONDE VOCE ESTA FIERMAN?! "+"\nDevon olha para baixo e ve uma pequena criatura, e se questiona quem seria."
+        + "\nDEUS Fierman: \nEU SOU O GRANDE FIERMAN!!! SEU NANICO. COMO OUSA ME ANALISAR DESSA FORMA? COMO ACHA QUE VAI CONSEGUIR ME DERROTAR? NÃO ME FAÇA RIR."
+        + "\nDEVON: \nDevon da uma pequena guargalhada, subestimando seu adversario.",TimeUnit.MILLISECONDS, temp_dialog);
         System.out.println("\n");
         enter();
-        Digita("\n\nNARRADOR: \nFieremana é um Deus guloso, come de tudo que está ao seu alcance, isso justifica seu enorme tamanho."
-        + "\nFieremana nunca está satisfeito, e seu cardápio é composto até por seres humanos."
-        + "\nPara conseguir derrotar Fieremana, Devon precisa resolver o desafio para conseguir mais poderes e derrotar o gigante Deus.",
+        Digita("\n\nNARRADOR: \nFierman é um grande guerreiro, devasta de tudo que está ao seu alcance, isso justifica seu legado de 'Grande'."
+        + "\nFierman nunca está satisfeito, e seu cardápio é composto por grandes batalhas ate a morte."
+        + "\nDevon sente que não conseguira derrotar Fierman, ate que percebe algo estranho no ar..."
+        + "\nPara conseguir derrotar Fierman, Devon precisa resolver o desafio para conseguir mais poderes e derrotar o pequeno Deus.",
         TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
@@ -215,9 +219,9 @@ public class AllInOne {
         funcaoEmbaralhar(questao, alternativas, resposta);
         if(acertos == true)
         {
-            System.out.println("Parabéns jogador! Conseguiu derrotar o gigante Deus Fieremana! E agora tem 2 dos 6 Poderes Supremos dos Deuses. ");
+            System.out.println("Parabéns jogador! Conseguiu derrotar o 'GRANDE' Deus Fierman! E agora tem 2 dos 6 Poderes Supremos dos Deuses. ");
         }else{
-            System.out.println("Resposta errada: Infelizmente não foi dessa vez que conseguiu derrotar o grande Fieremana. Melhor voltar para o Mefisto para terem uma conversa sobre.");
+            System.out.println("Resposta errada: Infelizmente não foi dessa vez que conseguiu derrotar o 'GRANDE' Fierman. Melhor voltar para o Mefisto para terem uma conversa sobre.");
             ft_enter();
         }
         return resposta;
