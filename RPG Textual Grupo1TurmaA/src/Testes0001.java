@@ -65,7 +65,7 @@ public class Testes0001 {
     }
     private static void funcaoEmbaralhar() throws Exception {
         boolean result;
-        String questao = "AQUI FICARIA A QUESTÃO | LOGO APÓS ELE SEGUIRÁ PARA OS TESTE NOS ENREDOS";
+        String questao = "AQUI FICARIA A QUESTÃO";
         String array_de_alternativas[] = {"A", "B", "C", "D", "E"};
         String resposta = array_de_alternativas[1];
         System.out.println("Resposta = "+array_de_alternativas[1]);
