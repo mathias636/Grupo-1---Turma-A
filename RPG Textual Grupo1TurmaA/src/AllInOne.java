@@ -165,7 +165,7 @@ public class AllInOne {
                 " \nVOCÊ FOI AVISADO, SEU TOLO.",TimeUnit.MILLISECONDS, temp_dialog);
     }
 
-    private static String Desafio1() throws Exception{
+    static String Desafio1() throws Exception{
         Digita ("\n\nNARRADOR:", TimeUnit.MILLISECONDS, temp_narrativa);
         Digita ("\nE começa a luta entre Devon e Hasad, Deus Metamorfo.", TimeUnit.MILLISECONDS, temp_narrativa);
         Digita ("\nOs poderes de Hasad são impressionantes, já que ele pode se transformar em qualquer ser vivo e até objetos.", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -208,7 +208,7 @@ public class AllInOne {
         TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
-    private static String Desafio2() throws Exception{
+    static String Desafio2() throws Exception{
         String questao = "Qual das alternativas corresponde 651 em base decimal para base octal? ";
         String alternativas[] = {"2234", "1132", "1211", "1231", "1213"};
         String resposta = alternativas[4]; // "1213";
@@ -272,7 +272,7 @@ public class AllInOne {
         enter();
     }
 
-    private static String Desafio3() throws Exception{
+    static String Desafio3() throws Exception{
         String questao = "Para derrotar Egoyis responda, simplifique o radical raiz quadrada de 27 e selecione a opção correta";
         String alternativas[] = {"raiz quadrada de 3", "2 raiz quadrada de 3", "3 raiz quadrada de 3", "3 raiz quadrada de 2", "2 raiz quadrada de 2"};
         String resposta = alternativas[2]; //3 raiz quadrada de 3
@@ -342,7 +342,7 @@ public class AllInOne {
         enter();
     }
 
-    private static String Desafio4() throws Exception{
+    static String Desafio4() throws Exception{
         System.out.println("\nDeusa Lust não esperava que Devon conseguisse chegar tão longe, ao ponto de derrubá-la.\n"
                 + "E para finalizar, resolva o desafio:");
         String questao = "\nDesenvolva a equação de primeiro grau 4x - 8 = 6 + 2x para finalizar a Deusa Lust.";
@@ -385,7 +385,7 @@ public class AllInOne {
             TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
-    private static String Desafio5() throws Exception{
+    static String Desafio5() throws Exception{
         String questao = "Resolva o desafio 23x - 16 = 14 - 17x e derrote Krieg de uma vez por todas";
         String alternativas[] = {"4/5", "3/4", "2/3", "1/2", "4/3"};
         String resposta = alternativas[1]; // "3/4"
@@ -444,7 +444,7 @@ public class AllInOne {
             TimeUnit.MILLISECONDS, temp_dialog);
     }
 
-    private static String Desafio6() throws Exception{
+    static String Desafio6() throws Exception{
         String questao = "Para esse último desafio, responda, 10y - 5(1 + y) = 3(2y - 2) - 20.";
         String alternativas[] = {"20", "18", "19", "21", "16"};
         String resposta = alternativas[3]; //21
@@ -579,6 +579,12 @@ public class AllInOne {
     }
 
     static boolean funcaoEmbaralhar(String questao, String alternativas[], String resposta) throws Exception {
+        /*
+        Principais objetivos desta função
+        - Embaralhar
+        - Imprimir alternativas embaralhadas
+        - Verificar resposta
+        */
         boolean result  = false; //variável para dar retorno ao teste
         int letter[] = {1, 2, 3, 4, 5}; //escolha das alternativas
         ArrayList<String> opcoes = new ArrayList<String>();
@@ -601,6 +607,7 @@ public class AllInOne {
             }
             ft_verifica_escolha(escolha_certa);
         }while(escolha < 1 || escolha > 5);
+        result = acertos;
         return result;
     }
 
@@ -615,8 +622,8 @@ public class AllInOne {
             case 4:
             case 5:
                 if(escolha == escolha_certa){
-                    acertos = true;}
-                else{
+                    acertos = true;
+                }else{
                     acertos = false;}
                 break;
             default:
