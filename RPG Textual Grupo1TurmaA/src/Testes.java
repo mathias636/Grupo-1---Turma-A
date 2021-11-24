@@ -17,14 +17,18 @@ public class Testes0001 {
             {
                 case 1:
                     testesContinuarVoltar();
+                    break;
                 case 2:
                     funcaoEmbaralhar();
+                    break;
                 case 3:
                     Desafios();
+                    break;
                 case 4:
                 case 5:
                 default:
                     escolha = 0;
+                    break;
             }
         }while(escolha == 0);
         scanner.close();
@@ -44,23 +48,30 @@ public class Testes0001 {
             case 1:
                 System.out.println("\nDESAFIO 1 | RESPOSTA: 1234");
                 AllInOne.Desafio1();
+                break;
             case 2:
                 System.out.println("\nDESAFIO 2 | RESPOSTA: 1213");
                 AllInOne.Desafio2();
+                break;
             case 3:
                 System.out.println("\nDESAFIO 3 | RESPOSTA: 3 raiz quadrada de 3");
                 AllInOne.Desafio3();
+                break;
             case 4:
                 System.out.println("\nDESAFIO 4 | RESPOSTA: 7");
                 AllInOne.Desafio4();
+                break;
             case 5:
                 System.out.println("\nDESAFIO 5 | RESPOSTA: 3/4");
                 AllInOne.Desafio5();
+                break;
             case 6:
                 System.out.println("\nDESAFIO 6 | RESPOSTA: 21");
                 AllInOne.Desafio6();
+                break;
             default:
                 Desafios();
+                break;
         }
     }
     private static void funcaoEmbaralhar() throws Exception {
