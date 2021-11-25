@@ -1,6 +1,6 @@
 ﻿import java.util.Scanner;
 
-public class Testes0001 {
+public class Testes {
 
     static Scanner scanner = new Scanner(System.in);
     static int escolha = 0;

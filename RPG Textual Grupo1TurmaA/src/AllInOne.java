@@ -7,9 +7,9 @@ public class AllInOne {
     /*
     variavéis para a função "Digita";
     ORIGINAL:
-    public static final int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
     */
-    public static int temp_dialog = 1, temp_narrativa = 2, temp_transicao = 0;
+    // public static int temp_dialog = 1, temp_narrativa = 2, temp_transicao = 0;
+    public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
     public static long tempo_mensagem = 0;
     /*
     abaixo, variáveis para condicionais do Jogo(), scanner,  e ContinuarVoltar(); 
@@ -498,12 +498,25 @@ public class AllInOne {
         do
         {
             Digita("\n\n1 - Continuar\n2 - Voltar\n\nDigite sua opção:\n", TimeUnit.MILLISECONDS, temp_transicao);
+            String msg = mensagem;
             escolha = scanner.nextInt();
             if(escolha == 1){
-                Digita(mensagem, TimeUnit.MILLISECONDS, temp_transicao);
-                ContinuarVoltar(mensagem);
+                    if(Contexto_ContinuarVoltar == 1){
+                        System.out.println("\nGAME OVER | CÊ MORREU MERMÃO");
+                        ft_enter();
+                    }
+                    if(Contexto_ContinuarVoltar == 2){
+                        System.out.println("\nGAME OVER | CÊ MORREU MERMÃO");
+                        ft_enter();
+                    }
+                    if(Contexto_ContinuarVoltar == 3){
+                        Digita(mensagem, TimeUnit.MILLISECONDS, temp_transicao);
+                        ContinuarVoltar(msg);
+                    }
             }else if(escolha == 2){
                 if(Contexto_ContinuarVoltar == 1){
+                    
+                    acertos = false;
                     PrimeiroEnredoDecisao();
                 }
                 if(Contexto_ContinuarVoltar == 2){
@@ -537,15 +550,15 @@ public class AllInOne {
 
 
     private static void Creditos() throws InterruptedException {
-        Digita("\n********************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Digita("\n******************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("** 'Devon' Foi desenvolvido como parte do projeto integrador do curso de Analise e Desenvolvimento de Sitemas no Senac        **\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("** O grupo de desenvolvimento é composto por:                                                                                 **"+
-        "\n**                                                                                                                            **"+
-        "\n** • Elton Freitas                                                                                                            **"+
-        "\n** • Keity Pires                                                                                                              ** " + 
-        "\n** • Matheus Galvão                                                                                                           **" + 
-        "\n** • Milena Kamimura                                                                                                          **"+ 
-        "\n** • Vinicius Gomes                                                                                                           **\n", TimeUnit.MILLISECONDS, temp_dialog);
+             "\n**                                                                                                                            **"+
+             "\n** • Elton Freitas                                                                                                            **"+
+             "\n** • Keity Pires                                                                                                              **"+ 
+             "\n** • Matheus Galvão                                                                                                           **"+ 
+             "\n** • Milena Kamimura                                                                                                          **"+ 
+             "\n** • Vinicius Gomes                                                                                                           **\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("**                                              Obrigado a todos                                                              **\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("********************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_dialog);
     }
