@@ -8,10 +8,10 @@ public class Devon {
     variavéis para a função "Digita";
     ORIGINAL:
     */
-    public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
+    // public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
 
     //abaixo, velocidades de escritas zeradas
-    // public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
+    public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
     public static long tempo_mensagem = 1;
     /*
     abaixo, variáveis para condicionais do Jogo(), scanner,  e ContinuarVoltar(); 
@@ -290,12 +290,11 @@ public class Devon {
 
     static void QuartoEnredoDecisao() throws Exception{
         int contexto = 2;
-
         DigitaLN("\n-------------------------------DESCANSO DE DEVON------------------------------------",TimeUnit.MILLISECONDS, temp_transicao);
         System.out.println("\n");
         DigitaLN("ESCOLHA O QUE DEVON DEVE FAZER.",TimeUnit.MILLISECONDS,temp_transicao);
         DigitaLN("\n1. Deixar Devon descansar mais um pouco para que não tenha mais que descansar depois.",TimeUnit.MILLISECONDS,temp_transicao);
-        DigitaLN("\n2. Acordar Devon para chegar na casa de Lust.",TimeUnit.MILLISECONDS,temp_transicao);
+        DigitaLN("\n2. Acordar Devon para chegar ao próximo deus.",TimeUnit.MILLISECONDS,temp_transicao);
         escolha = scanner.nextInt();
         do
         {
