@@ -8,9 +8,7 @@ public class Devon {
     variavéis para a função "Digita";
     ORIGINAL:
     */
-    public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
-
-    // public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
+    public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
     public static long tempo_mensagem = 1;
     /*
     abaixo, variáveis para condicionais do Jogo(), scanner,  e ContinuarVoltar(); 
@@ -103,7 +101,6 @@ public class Devon {
             }
             if(acertos == true){
                 SetimoEnredoFinal();
-                Creditos();
             }
         }
     }
@@ -481,6 +478,8 @@ public class Devon {
             + "\nSem nenhum remorço, sem nenhum sentimento. Nada." + "\nEra o que ele queria desde o começo."
             + "\nSempre foi o objetivo.", 
         TimeUnit.MILLISECONDS, temp_dialog);
+        enter();
+        Creditos();
     }
 
     public static int ContinuarVoltar(String mensagem, int contexto) throws Exception {
