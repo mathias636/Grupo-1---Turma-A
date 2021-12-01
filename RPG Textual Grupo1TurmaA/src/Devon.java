@@ -8,7 +8,8 @@ public class Devon {
     variavéis para a função "Digita";
     ORIGINAL:
     */
-    public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
+    // public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
+    public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
     public static long tempo_mensagem = 1;
     /*
     abaixo, variáveis para condicionais do Jogo(), scanner,  e ContinuarVoltar(); 
@@ -121,12 +122,12 @@ public class Devon {
             + "\nE ASSIM, QUANDO CONSEGUIR OS 6 PODERES SUPREMOS, TUDO FICARÁ DO JEITO QUE DEVE SER."
             + "\nDEVON: \nE por onde eu devo começar?"
             + "\nMEFISTO: \nA partir de agora é com você. Você já sabe o que fazer. \nBoa sorte, Devon, O Místico.", TimeUnit.MILLISECONDS, temp_dialog);
-        enter();
+        duplo_enter();
+        System.out.println("");
         Digita("\nNARRADOR: \nE começa a jornada de DEVON."
             + "\nSeu primeiro Deus é Hasad, que mora em Terra de Ninguém."
             + "\nMas para chegar lá, precisa escolher o caminho correto\n"
             , TimeUnit.MILLISECONDS, temp_narrativa);
-        enter();
     }
     
     public static void PrimeiroEnredoDecisao() throws Exception{
@@ -148,7 +149,7 @@ public class Devon {
         }while (escolha < 1 || escolha > 2);
     }
 
-    static void SegundoEnredo() throws Exception{
+    static void SegundoEnredo() throws Exception {
         Digita("Alguns dias depois..." + "\n " + "\nNARRADOR: "
                 + "\nDepois de uma longa jornada, Devon chegou em sua primeira batalha... \nE lá, Hasad lhe aguardava.",TimeUnit.MILLISECONDS, temp_narrativa);
         enter();
@@ -185,6 +186,7 @@ public class Devon {
         + "\nFieremana é um Deus devorador(conquistador), ou seja, ele basicamente consegue tudo o que deseja."
         + "\nNão será fácil para Devon."
         + "\nApós a grande luta com Hasad, Devon parou um pouco no caminho para recarregar suas energias para sua próxima batalha, e terá um longo caminho para chegar no Deus Fieremana.", TimeUnit.MILLISECONDS, temp_narrativa);
+        System.out.println("\n");
         enter();
         QuartoEnredoDecisao();
         duplo_enter();
@@ -195,9 +197,7 @@ public class Devon {
         + "\nDEVON: \nONDE VOCÊ ESTÁ Fieremana?! "+"\nDevon olha para baixo e ve uma pequena criatura, e se questiona quem seria."
         + "\nDEUS Fieremana: \nEU SOU O GRANDE Fieremana!!! SEU NANICO. COMO OUSA ME ANALISAR DESSA FORMA? COMO ACHA QUE VAI CONSEGUIR ME DERROTAR? NÃO ME FAÇA RIR."
         + "\nDEVON: \nDevon da uma pequena guargalhada, subestimando seu adversario.",TimeUnit.MILLISECONDS, temp_dialog);
-        System.out.println("\n");
         enter();
-        System.out.println("\n");
         Digita("\n\nNARRADOR: \nFieremana é um grande guerreiro, devasta de tudo que está ao seu alcance, isso justifica seu legado de 'Grande'."
         + "\nFieremana nunca está satisfeito, e seu cardápio é composto por grandes batalhas até a morte."
         + "\nDevon sente que não conseguira derrotar Fieremana, até que percebe algo estranho no ar..."
@@ -252,7 +252,6 @@ public class Devon {
     }
 
     static void QuartoEnredo() throws Exception{
-        System.out.println("\n");
         enter();
         Digita("\nDEUSA EGOYIS: \nOlá, Devon." + "\nBem-vindo a minha humilde residência. Eu estava te aguardando."
             + "\nDEVON: \nComo você sabia que eu estava vindo?" + "\nDEUSA EGOYIS: Está brincando?"
@@ -263,7 +262,6 @@ public class Devon {
             + "\nMas vamos lá, Deus Controlador."
             + "\nNARRADOR: \nDevon subestimou Egoyis, e agora precisará resolver o desafio para conseguir derrotá-la.", 
         TimeUnit.MILLISECONDS, temp_dialog);
-        System.out.println("\n");
         enter();
     }
 
@@ -365,7 +363,6 @@ public class Devon {
             + "\nKrieg é um deus perverso, gosta de provocar dor e sofrimento quando tem a chance."
             + "\nEle possui grandes poderes de fogo." + "\nConsegue fazer qualquer coisa com o seu elemento.",TimeUnit.MILLISECONDS, temp_dialog);
             DigitaLN("\n\n-----------------------CHEGANDO NA CASA DE KRIEG-----------------------", TimeUnit.MILLISECONDS, tempo_mensagem);
-            System.out.println("\n");
             enter();
             Digita("\nDEUS KRIEG: \nOlá olá olá, Devon, meu querido. Ouvi falar tanto de você."
             + "\nDerrotou meus queridíssimos amigos que eu tanto gostava."
@@ -509,7 +506,6 @@ public class Devon {
                 if(choice == 2)
                 {
                     System.out.println("VOLTANDO... ");
-                    Testes.testesContinuarVoltar();
                 }
                 break;
             case 1: //TerceiroEnredoDecisaoPósDesafio();
@@ -546,11 +542,12 @@ public class Devon {
     }
 
     static void enter() throws Exception {
-        System.out.println("\n>>Aperte \"Enter\" para seguir");
+        System.out.println("\n>>Aperte \"Enter\" até prosseguir");
+        Devon.scanner.nextLine();
         Devon.scanner.nextLine();
     }
     static void duplo_enter() throws Exception {
-        System.out.println("\n>>Aperte \"Enter\" para seguir");
+        System.out.println("\n>>Aperte \"Enter\" até prosseguir");
         Devon.scanner.nextLine();
         Devon.scanner.nextLine();
     }
@@ -562,7 +559,7 @@ public class Devon {
     }
 
     private static void Creditos() throws InterruptedException {
-        Digita("\n******************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Digita("\n*******************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_transicao);
         Digita("** 'Devon' Foi desenvolvido como parte do projeto integrador do curso de Analise e Desenvolvimento de Sitemas no Senac        **\n", TimeUnit.MILLISECONDS, temp_dialog);
         Digita("** O grupo de desenvolvimento é composto por:                                                                                 **"+
              "\n**                                                                                                                            **"+
@@ -570,9 +567,9 @@ public class Devon {
              "\n** - Keity Pires                                                                                                              **"+ 
              "\n** - Matheus Galvão                                                                                                           **"+ 
              "\n** - Milena Kamimura                                                                                                          **"+ 
-             "\n** - Vinicius Gomes                                                                                                           **\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita("**                                              Obrigado a todos                                                              **\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Digita("********************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_dialog);
+             "\n** - Vinicius Gomes                                                                                                           **\n", TimeUnit.MILLISECONDS, tempo_mensagem);
+        Digita("**                                              Obrigado a todos                                                              **\n", TimeUnit.MILLISECONDS, temp_transicao);
+        Digita("********************************************************************************************************************************\n", TimeUnit.MILLISECONDS, temp_transicao);
     }
 
     private static void Instrucoes() throws InterruptedException {

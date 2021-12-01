@@ -44,6 +44,7 @@ public class Testes {
         int escolha;
         System.out.println("escolha uma opção\n");
         System.out.println("0 - sair");
+        System.out.println("1010 - todos de uma vez");
         System.out.println("1 - PrimeiroEnredo");
         System.out.println("2 - SegundoEnredo");
         System.out.println("3 - TerceiroEnredo");
@@ -56,6 +57,20 @@ public class Testes {
         System.out.println("10 - SetimoEnredo");
         System.out.println("11 - SetimoEnredoFinal");
         escolha = scanner.nextInt();
+        if(escolha == 1010)
+        {
+            Devon.PrimeiroEnredo();
+            Devon.SegundoEnredo();
+            Devon.TerceiroEnredo();
+            Devon.TerceiroEnredoFinal();
+            Devon.QuartoEnredo();
+            Devon.QuartoEnredoFinal();
+            Devon.QuintoEnredo();
+            Devon.QuintoEnredoFinal();
+            Devon.SextoEnredo();
+            Devon.SetimoEnredo();
+            Devon.SetimoEnredoFinal();  
+        }
         switch(escolha)
         {
             case 0:
