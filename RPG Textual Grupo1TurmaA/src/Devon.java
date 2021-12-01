@@ -8,8 +8,10 @@ public class Devon {
     variavéis para a função "Digita";
     ORIGINAL:
     */
-    // public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
-    public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
+    public static int temp_dialog = 25, temp_narrativa = 75, temp_transicao = 10;
+
+    //abaixo, velocidades de escritas zeradas
+    // public static int temp_dialog = 0, temp_narrativa = 0, temp_transicao = 0;
     public static long tempo_mensagem = 1;
     /*
     abaixo, variáveis para condicionais do Jogo(), scanner,  e ContinuarVoltar(); 
